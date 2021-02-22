@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="policar.policarappv6.NavegacionActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_navegacion" />
+
+
+
+
+
+
+    <!--
+
+    <android.support.design.widget.FloatingActionButton
+         android:id="@+id/fab1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="bottom|end"
+         android:visibility="invisible"
+         app:elevation="6dp"
+        app:backgroundTint="@color/ColorFondo3"
+
+         android:layout_marginBottom="60dp"
+         android:src="@mipmap/icon_grabar150" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:visibility="invisible"
+        app:elevation="6dp"
+        app:backgroundTint="@color/ColorFondo3"
+
+        android:layout_marginBottom="60dp"
+        android:src="@mipmap/icon_detener150" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:visibility="invisible"
+        app:elevation="6dp"
+        app:backgroundTint="@color/ColorFondo3"
+
+        android:layout_marginBottom="60dp"
+        android:src="@mipmap/icon_recibiendo150" />
+
+-->
+
+
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:visibility="visible"
+        app:elevation="6dp"
+        app:backgroundTint="@color/ColorBotonRadioGrabarFondoPrimario"
+
+        app:borderWidth="5dp"
+
+
+        android:layout_marginBottom="60dp"
+        android:src="@mipmap/icon_radio150" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:visibility="invisible"
+        app:elevation="6dp"
+        app:backgroundTint="@color/ColorBotonRadioDetenerFondoPrimario"
+
+        android:layout_marginBottom="60dp"
+        android:src="@mipmap/icon_radio_detener150" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:visibility="invisible"
+        app:elevation="6dp"
+        app:backgroundTint="@color/ColorBotonRadioRecibirFondoPrimario"
+
+        android:layout_marginBottom="60dp"
+        android:src="@mipmap/icon_radio_recibir150" />
+
+
+
+
+    <!--
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:visibility="visible"
+        app:elevation="6dp"
+        app:backgroundTint="@color/ColorFondo15"
+
+        android:layout_marginBottom="60dp"
+        android:src="@mipmap/icon_radio150" />-->
+
+
+
+
+
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:visibility="visible"
+        app:elevation="6dp"
+        app:backgroundTint="@color/ColorBotonFlotanteFondoPrimario"
+        app:borderWidth="2dp"
+        android:layout_marginTop="120dp"
+        android:src="@mipmap/icon_0canal150" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:visibility="visible"
+        app:elevation="6dp"
+        app:backgroundTint="@color/ColorBotonFlotanteFondoPrimario"
+        app:borderWidth="2dp"
+        android:layout_marginTop="120dp"
+        android:src="@mipmap/icon_1canal150" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:visibility="visible"
+        app:elevation="6dp"
+        app:backgroundTint="@color/ColorBotonFlotanteFondoPrimario"
+        app:borderWidth="2dp"
+        android:layout_marginTop="120dp"
+        android:src="@mipmap/icon_2canal150" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:visibility="visible"
+        app:elevation="6dp"
+        app:backgroundTint="@color/ColorBotonFlotanteFondoPrimario"
+        app:borderWidth="2dp"
+        android:layout_marginTop="120dp"
+        android:src="@mipmap/icon_3canal150" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:visibility="visible"
+        app:elevation="6dp"
+        app:backgroundTint="@color/ColorBotonFlotanteFondoPrimario"
+        app:borderWidth="2dp"
+        android:layout_marginTop="120dp"
+        android:src="@mipmap/icon_4canal150" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:visibility="visible"
+        app:elevation="6dp"
+        app:backgroundTint="@color/ColorBotonFlotanteFondoPrimario"
+        app:borderWidth="2dp"
+        android:layout_marginTop="120dp"
+        android:src="@mipmap/icon_5canal150" />
+
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:visibility="visible"
+        app:elevation="6dp"
+        app:backgroundTint="@color/ColorBotonFlotanteFondoPrimario"
+        app:borderWidth="2dp"
+        android:layout_marginTop="185dp"
+        android:src="@mipmap/icon_usuarios150" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/FabRadio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:visibility="visible"
+        app:elevation="6dp"
+        app:backgroundTint="@color/ColorBotonCoberturaFondoPrimario"
+        app:borderWidth="2dp"
+        android:layout_marginTop="255dp"
+        android:src="@mipmap/icon_cobertura150" />
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dra_fondo_lista_item"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/imgConductorCanalFoto"
+                android:src="@mipmap/icon_conductor150"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_margin="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1">
+
+                <TextView android:id="@+id/CmpConductorVehiculoUnidad"
+                    android:textSize="14sp"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="A-01"
+
+                    style="@style/est_etiqueta"
+
+                    android:layout_below="@+id/textView27"
+                    android:layout_alignLeft="@+id/textView27"
+                    android:layout_alignStart="@+id/textView27"
+                    android:layout_weight="0.8" />
+
+                <TextView android:id="@+id/CmpConductorNombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="JOSE PEREZ"
+
+                    style="@style/est_contenido"
+
+                    android:layout_below="@+id/textView28"
+                    android:layout_alignLeft="@+id/textView28"
+                    android:layout_alignStart="@+id/textView28"
+                    android:layout_alignRight="@+id/CmpNumero"
+                    android:layout_alignEnd="@+id/CmpNumero"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.90">
+
+            <TextView
+                style="@style/est_ranking_contador"
+                android:id="@+id/CmpRankingTotal"
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="0"
+                android:layout_below="@+id/textView27"
+                android:layout_alignLeft="@+id/textView27"
+                android:layout_alignStart="@+id/textView27" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="policar.policarappv6.PedidoDetalleActivity"
+    tools:showIn="@layout/app_bar_pedido_detalle"
+    android:background="@drawable/dra_fondo"
+    >
+
+
+    <fragment
+        android:id="@+id/map1"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="297dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/CapScroll"
+        android:layout_alignParentBottom="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/CapBotones"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:background="@drawable/dra_boton_imagen_fondo_pedido_rechazar"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:gravity="center_horizontal"
+            android:weightSum="1" >
+
+            <ImageButton
+                android:background="?android:selectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton2"
+                android:src="@mipmap/icon_cancelar150"
+                android:onClick="onClick_BtnPedidoDetalleRechazar"
+                android:scaleType="fitCenter"
+                android:layout_weight="7.90" />
+
+            <TextView
+                style="@style/est_boton_imagen_texto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Rechazar"
+                android:id="@+id/textView50" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/dra_boton_imagen_fondo_pedido_aceptar"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:gravity="center_horizontal"
+            android:weightSum="1" >
+
+            <ImageButton
+                android:background="?android:selectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton3"
+                android:src="@mipmap/icon_ok150"
+                android:onClick="onClick_BtnPedidoDetalleAceptar"
+                android:scaleType="fitCenter"
+                android:layout_weight="7.60" />
+
+            <TextView
+                style="@style/est_boton_imagen_texto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Aceptar"
+                android:id="@+id/textView55" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/CapScroll"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/CapContenidoScroll">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/CapContenidos"
+                android:background="@drawable/dra_fondo_contenido">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/CapPedidoDetalleTipoAccion"
+                    android:layout_gravity="right"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ImgPedidoDetalleTipoAccion"
+                        android:src="@mipmap/icon_tipo_taxi150" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:id="@+id/CapClienteNombre">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/imageView"
+                        android:src="@mipmap/icon_cliente120" />
+
+                    <TextView
+                        style="@style/est_pedido_detalle_cliente_nombre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="JOSE PEREZ"
+                        android:id="@+id/CmpClienteNombre"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/textView28"
+                        android:layout_weight="0.9"
+                        android:gravity="left" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:id="@+id/CapPedidoDireccion">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/imageView21"
+                        android:src="@mipmap/icon_direccion120" />
+
+                    <TextView
+                        style="@style/est_pedido_detalle_direccion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="DIRECCION DEL PEDIDO"
+                        android:id="@+id/CmpPedidoDireccion"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/textView25"
+                        android:layout_weight="0.9"
+                        android:gravity="left" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:id="@+id/CapPedidoReferencia">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/imageView22"
+                        android:src="@mipmap/icon_referencia120" />
+
+                    <TextView
+                        style="@style/est_pedido_detalle_referencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="REFERENCIA DEL PEDIDO"
+                        android:id="@+id/CmpConductorNombre"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/textView28"
+                        android:layout_weight="0.9"
+                        android:gravity="left" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:id="@+id/CapPedidoDetalleLugarCompra" >
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/imageView43"
+                        android:src="@mipmap/icon_tienda120" />
+
+                    <TextView
+                        style="@style/est_pedido_actual_cliente_nombre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="LUGAR DE COMPRA"
+                        android:id="@+id/CmpPedidoDetalleLugarCompra"
+                        android:layout_below="@+id/CmpNumero"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_weight="0.61"
+                        android:gravity="left" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:id="@+id/CapPedidoDetalle" >
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/imageView28"
+                        android:src="@mipmap/icon_detalle120" />
+
+                    <TextView
+                        style="@style/est_pedido_detalle_detalle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="DETALLE DE COMPRA"
+                        android:id="@+id/CmpPedidoDetalle"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/textView28"
+                        android:layout_weight="0.9"
+                        android:gravity="left" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:id="@+id/CapTipoUnidad" >
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/imageView23"
+                        android:src="@mipmap/icon_station120" />
+
+                    <TextView
+                        style="@style/est_pedido_detalle_tipo_unidad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="UNIDAD STATION"
+                        android:id="@+id/textView23"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/textView25" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="19dp"
+                    android:gravity="top"
+                    android:id="@+id/CapPedidoTiempoDistancia" >
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:id="@+id/CapPedidoDistancia" >
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/imageView33"
+                            android:src="@mipmap/icon_distancia120" />
+
+                        <TextView
+                            style="@style/est_pedido_actual_detalle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="0.0 km"
+                            android:id="@+id/CmpPedidoDistancia"
+                            android:layout_below="@+id/CmpNumero"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_weight="0.61"
+                            android:gravity="left"
+                            android:lines="3" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:id="@+id/CapPedidoTiempo" >
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/imageView34"
+                            android:src="@mipmap/icon_tiempo120" />
+
+                        <TextView
+                            style="@style/est_pedido_actual_detalle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="0 min"
+                            android:id="@+id/CmpPedidoTiempo"
+                            android:layout_below="@+id/CmpNumero"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_weight="0.61"
+                            android:gravity="left"
+                            android:lines="3" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dra_fondo_lista_item">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/imgConductorCanalFoto"
+                android:src="@mipmap/icon_historial150"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_margin="2dp" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView android:id="@+id/CmpPedidoDireccion"
+                    android:textSize="14sp"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="mi destino"
+
+                    style="@style/est_etiqueta"
+
+                    android:layout_below="@+id/textView27"
+                    android:layout_alignLeft="@+id/textView27"
+                    android:layout_alignStart="@+id/textView27"
+                    android:layout_weight="0.8" />
+
+                <TextView android:id="@+id/CmpConductorNombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="mi referencia"
+
+                    style="@style/est_contenido"
+
+                    android:layout_below="@+id/textView28"
+                    android:layout_alignLeft="@+id/textView28"
+                    android:layout_alignStart="@+id/textView28"
+                    android:layout_alignRight="@+id/CmpNumero"
+                    android:layout_alignEnd="@+id/CmpNumero"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout17"
+            android:layout_alignTop="@+id/imgConductorCanalFoto"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/imgConductorCanalFoto"
+            android:layout_toEndOf="@+id/imgConductorCanalFoto">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout14"
+            android:layout_alignBottom="@+id/imgConductorCanalFoto"
+            android:layout_alignLeft="@+id/linearLayout17"
+            android:layout_alignStart="@+id/linearLayout17">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/linearLayout16"
+            android:layout_alignRight="@+id/linearLayout14"
+            android:layout_alignEnd="@+id/linearLayout14"
+            android:id="@+id/linearLayout21">
+
+            <TextView
+                android:id="@+id/CmpClienteNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="JUAN PEREZ PEREZ"
+
+                style="@style/est_etiqueta"
+
+                android:layout_below="@+id/linearLayout17"
+                android:layout_alignLeft="@+id/CmpConductorNombre"
+                android:layout_alignStart="@+id/CmpConductorNombre"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout15"
+            android:layout_below="@+id/linearLayout20"
+            android:layout_alignRight="@+id/linearLayout14"
+            android:layout_alignEnd="@+id/linearLayout14">
+
+            <TextView
+                android:id="@+id/CmpPedidoFecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="00/00/0000"
+
+                style="@style/est_contenido"
+
+                android:layout_below="@+id/textView29"
+                android:layout_alignLeft="@+id/textView29"
+                android:layout_alignStart="@+id/textView29"
+                android:layout_weight="0.5" />
+
+            <TextView
+                style="@style/est_contenido"
+                android:id="@+id/CmpPedidoHora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00:00"
+                android:layout_above="@+id/textView36"
+                android:layout_toRightOf="@+id/textView28"
+                android:layout_toEndOf="@+id/textView28"
+                android:layout_weight="0.5" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

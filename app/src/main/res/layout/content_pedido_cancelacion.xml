@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="policar.policarappv6.PedidoCancelacionActivity"
+    tools:showIn="@layout/app_bar_pedido_cancelacion"
+    android:background="@drawable/dra_fondo"
+    >
+
+    <ScrollView
+        android:background="@drawable/dra_fondo_contenido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/CapScroll"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/CapBotones">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/CapContenedorScroll">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/CapContenidos">
+
+                <TextView
+                    style="@style/est_aviso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView9"
+                    android:text="Por favor, indiquenos el motivo por el cual va a cancelar el pedido"
+                    android:layout_below="@+id/textView5"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupCancelar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@+id/CmpMensaje"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" >
+
+                    <RadioButton
+                        style="@style/est_contenido2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No pude ubicar al cliente (*)"
+                        android:id="@+id/radioButton1"
+                        android:layout_below="@+id/CmpMensaje"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:checked="false" />
+
+                    <RadioButton
+                        style="@style/est_contenido2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Problemas con la unidad vehicular"
+                        android:id="@+id/radioButton2"
+                        android:layout_below="@+id/radioButton2"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:checked="false" />
+
+                    <RadioButton
+                        style="@style/est_contenido2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Operativo Policial"
+                        android:id="@+id/radioButton3"
+                        android:checked="false"
+                        android:layout_below="@+id/radioGroupCancelar"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <RadioButton
+                        style="@style/est_contenido2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Otros motivos"
+                        android:id="@+id/radioButton4"
+                        android:checked="false"
+                        android:layout_below="@+id/radioGroupCancelar"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+                </RadioGroup>
+
+                <TextView
+                    style="@style/est_aviso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView49"
+                    android:text="(*) Anula completamente el pedido"
+                    android:layout_below="@+id/textView5"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/CapBotones" >
+
+        <LinearLayout
+            android:background="@drawable/dra_boton_imagen_fondo"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:gravity="center_horizontal"
+            android:weightSum="1">
+
+            <ImageButton
+                android:background="?android:selectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:id="@+id/BtnPedidoCancelacionGuardar"
+                android:src="@mipmap/icon_ok150"
+                android:onClick="onClick_BtnPedidoCancelacionGuardar"
+                android:scaleType="fitCenter"
+                android:layout_weight="15.75" />
+
+            <TextView
+                style="@style/est_boton_imagen_texto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Enviar"
+                android:id="@+id/textView10" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

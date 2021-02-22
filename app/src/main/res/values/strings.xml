@@ -1,0 +1,102 @@
+<resources>
+    <string name="app_name">Policar App - Conductor</string>
+
+    <string name="app_url">http://policartacnav2.ddns.net:8080/apppolicar</string>
+    <string name="app_url2">http://policartacnav2.ddns.net:8080/apppolicar</string>
+
+    <string name="app_version">Policar App - Conductor v.1.6</string>
+    <string name="app_version_numero">1.6</string>
+    <string name="app_titulo">Policar App - Conductor</string>
+    <string name="app_lema">Seguridad y Confianza</string>
+    <string name="alert_title">Policar App - Conductor</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="action_index">Index</string>
+    <string name="action_ubicame">Ubicame</string>
+    <string name="action_inicio">Inicio</string>
+
+    <string name="action_central">Llamar a la Central</string>
+    <string name="action_novedades">Ver Novedades</string>
+
+    <string name="action_crear_cuenta">Crear Cuenta</string>
+    <string name="action_entrar_cuenta">Iniciar Sesion</string>
+    <string name="action_modificar_cuenta">Modificar Cuenta</string>
+    <string name="action_ver_cuenta">Mis Datos</string>
+
+    <string name="action_desconectarse">Desconectar</string>
+    <string name="action_emergencia">Emergencia</string>
+    <string name="action_ver_emergencia">Ver Emergencia</string>
+
+    <string name="action_reportar_ubicacion">Reportar Ubicación</string>
+
+    <string name="app_compartir">https://play.google.com/store/apps/details?id=policar.policarappv6</string>
+    <string name="app_compartir_sub">¡Te invito a utilizar Policar App!</string>
+
+    <string name="action_salir_cuenta">Cerrar Sesion</string>
+
+    <string name="action_mis_preferencias">Mis Preferencias</string>
+    <string name="action_mis_favoritos">Mis Favoritos</string>
+    <string name="action_mi_historial">Mi Historial</string>
+    <string name="action_acerca_de">Acerca de</string>
+    <string name="action_salir">Salir</string>
+    <string name="action_compartir">Compartir</string>
+    <string name="action_mapa">Mapa</string>
+    <string name="action_ranking">Ranking 10</string>
+
+    <string name="action_sincronizar">Sincronizar</string>
+    <string name="action_verificar_gps">Verif. GPS</string>
+    <string name="action_mensaje">Mensaje</string>
+
+    <string name="action_titulo1">Opciones</string>
+    <string name="action_titulo2">Otros</string>
+
+    <string name="title_activity_main_sesion">MainSesionActivity</string>
+    <string name="title_activity_monitoreo">Navegacion</string>
+    <string name="title_activity_pedido_actual">Servicio Actual</string>
+    <string name="title_activity_pedido_cancelacion">Cancelar Servicio</string>
+    <string name="title_activity_historial">Historial de Servicios</string>
+    <string name="title_activity_mis_preferencias">Mis Preferencias</string>
+    <string name="title_activity_crear_cuenta">Pre-Registro</string>
+    <string name="title_activity_conductor_desconectado">Desconectado</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_radar">RadarActivity</string>
+    <string name="title_activity_conductor_dato">Mis Datos</string>
+    <string name="title_activity_navegacion">Navegacion</string>
+    <string name="title_activity_recepcionar_pedido">RecepcionarPedidoActivity</string>
+    <string name="title_activity_radio_mensajes">RadioMensajesActivity</string>
+    <string name="title_activity_radio_historial">RadioHistorialActivity</string>
+    <string name="title_activity_iniciar_viaje">Viaje Iniciado</string>
+    <string name="title_activity_pedido_detalle">Detalle del Servicio</string>
+    <string name="title_activity_main">Acceso Conductor</string>
+    <string name="title_activity_mapa">Mapa</string>
+    <string name="title_activity_listar_canal_conductor">Conductores en Canal</string>
+
+    <string name="message_error_interno">Lo sentimos ha ocurrido un error interno</string>
+    <string name="message_no_proceso">Lo sentimos no hemos podido cargar la informacion, intente nuevamente</string>
+    <string name="message_no_identificador">Lo sentimos no hemos podido identificar su equipo</string>
+    <string name="message_no_internet">Ha ocurrido un error, verifique que tenga una conexión a internet activa.</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_intro">IntroActivity</string>
+    <string name="title_activity_radio">RadioActivity</string>
+
+
+    <string name="webservice_jnpedido">JnPedidov2.php</string>
+    <string name="webservice_jncliente">JnCliente.php</string>
+    <string name="webservice_jnconductor">JnConductorv2.php</string>
+    <string name="webservice_jnpublicidad">JnPublicidad.php</string>
+    <string name="webservice_jnmapa">JnMapa.php</string>
+    <string name="webservice_jnradiomensaje">JnRadioMensaje.php</string>
+    <string name="webservice_jnconductormensaje">JnConductorMensaje.php</string>
+    <string name="webservice_jnrankingconductor">JnRankingConductor.php</string>
+    <string name="webservice_jnconductorubicacion">JnConductorUbicacion.php</string>
+    <string name="webservice_jnconductoralerta">JnConductorAlerta.php</string>
+
+    <string name="title_activity_ranking">Ranking 10</string>
+
+
+</resources>

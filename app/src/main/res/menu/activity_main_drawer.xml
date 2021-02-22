@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:title="@string/action_titulo1" android:checkableBehavior="single" >
+
+        <item
+            android:id="@+id/nav_inicio"
+            android:icon="@mipmap/icon_inicio50"
+            android:title="@string/action_inicio" />
+
+
+        <item
+            android:id="@+id/nav_crear_cuenta"
+            android:icon="@mipmap/icon_crearcuenta50"
+            android:title="@string/action_crear_cuenta" />
+
+        <item
+            android:id="@+id/nav_acerca_de"
+            android:icon="@mipmap/icon_acercade50"
+            android:title="@string/action_acerca_de" />
+
+
+
+    </group>
+
+    <item android:title="@string/action_titulo2">
+        <menu>
+            <item
+                android:id="@+id/nav_compartir"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/action_compartir" />
+
+            <item
+                android:id="@+id/nav_salir"
+                android:icon="@mipmap/icon_salir50"
+                android:title="@string/action_salir" />
+
+        </menu>
+    </item>
+
+</menu>

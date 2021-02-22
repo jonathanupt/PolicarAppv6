@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="policar.policarappv6.ListarCanalConductorActivity"
+    tools:showIn="@layout/activity_listar_canal_conductor"
+    android:background="@drawable/dra_fondo"
+    >
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:id="@+id/CapFiltro"
+        android:weightSum="1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.95"
+            android:gravity="left" >
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="right" >
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/CapBuscador"
+        android:layout_toEndOf="@+id/CapBuscador"
+        android:gravity="center_vertical">
+
+        <TextView
+            style="@style/est_etiqueta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Canal:"
+            android:id="@+id/textView34" />
+
+        <TextView
+            style="@style/est_contenido"
+            android:background="@drawable/dra_campo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Canal 0"
+            android:id="@+id/CmpConductorCanal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/CapBuscador"
+        android:weightSum="1"
+        android:layout_below="@+id/CapFiltro"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.95"
+            android:gravity="left" >
+
+            <EditText
+                style="@style/est_contenido"
+                android:background="@drawable/dra_campo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/CmpFiltro"
+                android:hint="Buscar..." />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="right" >
+
+            <ImageButton
+                android:background="?android:selectableItemBackground"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/BtnListarCanalConductorFiltrar"
+                android:src="@mipmap/icon_buscar150"
+                android:onClick="onClick_BtnListarCanalConductorFiltrar"
+                android:layout_above="@+id/LstFavoritos"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/LstRanking"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_above="@+id/CapTotales"
+        android:layout_below="@+id/linearLayout"
+        android:background="@drawable/fondo_listado" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/CapTotales"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Se encontraron (0) conductores"
+            android:id="@+id/CmpConductorCanalTotal"
+            style="@style/est_etiqueta" />
+    </LinearLayout>
+
+
+</RelativeLayout>

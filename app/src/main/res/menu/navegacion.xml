@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_emergencia"
+        android:orderInCategory="100"
+        android:title="@string/action_emergencia"
+        app:showAsAction="ifRoom" android:icon="@mipmap/icon_emergencia150b"
+        />
+
+    <item
+        android:id="@+id/action_ver_emergencia"
+        android:orderInCategory="100"
+        android:title="@string/action_ver_emergencia"
+        app:showAsAction="ifRoom" android:icon="@mipmap/icon_ver_emergencia150"
+        />
+
+    <item
+        android:id="@+id/action_mensaje"
+        android:orderInCategory="100"
+        android:title="@string/action_mensaje"
+
+        app:showAsAction="ifRoom" android:icon="@mipmap/icon_mensaje150b"
+        />
+
+    <item
+        android:id="@+id/action_verificar_gps"
+        android:orderInCategory="100"
+        android:title="@string/action_verificar_gps"
+
+        app:showAsAction="ifRoom" android:icon="@mipmap/icon_gps150b"
+        />
+
+</menu>

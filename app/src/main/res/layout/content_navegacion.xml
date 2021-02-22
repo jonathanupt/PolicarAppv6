@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="policar.policarappv6.NavegacionActivity"
+    tools:showIn="@layout/app_bar_navegacion"
+    android:background="@drawable/dra_fondo"
+    >
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/CapContenidos"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:background="@drawable/dra_boton_imagen_fondo"
+            android:gravity="center_vertical|center_horizontal">
+
+            <TextView
+                style="@style/est_navegacion_etiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unidad"
+                android:id="@+id/textView31"
+                android:layout_above="@+id/CmpMensaje"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="0.16" />
+
+            <TextView
+                style="@style/est_navegacion_contenido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="A-01"
+                android:id="@+id/CmpVehiculoUnidad"
+                android:layout_below="@+id/textView4"
+                android:layout_toLeftOf="@+id/textView41"
+                android:layout_toStartOf="@+id/textView41"
+                android:layout_weight="0.16" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:background="@drawable/dra_boton_imagen_fondo"
+            android:gravity="center_vertical|center_horizontal">
+
+            <TextView
+                style="@style/est_navegacion_etiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Placa"
+                android:id="@+id/textView377"
+                android:layout_below="@+id/textView4"
+                android:layout_toLeftOf="@+id/CmpVehiculoPlaca"
+                android:layout_toStartOf="@+id/CmpVehiculoPlaca"
+                android:layout_weight="0.16" />
+
+            <TextView
+                style="@style/est_navegacion_contenido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XYZ-123"
+                android:id="@+id/CmpVehiculoPlaca"
+                android:layout_below="@+id/textView4"
+                android:layout_alignRight="@+id/CmpMensaje"
+                android:layout_alignEnd="@+id/CmpMensaje"
+                android:layout_weight="0.16" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:background="@drawable/dra_boton_imagen_fondo"
+            android:gravity="center_vertical|center_horizontal" >
+
+            <TextView
+                style="@style/est_navegacion_etiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Color"
+                android:id="@+id/textView11"
+                android:layout_below="@+id/textView4"
+                android:layout_toLeftOf="@+id/CmpVehiculoColor"
+                android:layout_toStartOf="@+id/CmpVehiculoColor"
+                android:layout_weight="0.16" />
+
+            <TextView
+                style="@style/est_navegacion_contenido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BLANCO"
+                android:id="@+id/CmpVehiculoColor"
+                android:layout_below="@+id/textView4"
+                android:layout_alignRight="@+id/CmpMensaje"
+                android:layout_alignEnd="@+id/CmpMensaje"
+                android:layout_weight="0.16" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/LstPedidoPendientes"
+        android:visibility="visible"
+        android:background="@drawable/fondo"
+        android:layout_below="@+id/CapContenidos"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/map1" />
+
+    <fragment
+        android:id="@+id/map1"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_above="@+id/CapOpciones"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/CapOpciones"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:background="@drawable/dra_boton_imagen_fondo"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.33"
+            android:gravity="center_horizontal"
+            android:weightSum="1">
+
+            <ImageButton
+                android:background="?android:selectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:id="@+id/BtnNavegacionDesconectar"
+                android:src="@mipmap/icon_desconectar150"
+                android:onClick="onClick_BtnNavegacionDesconectar"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                style="@style/est_boton_imagen_texto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Desconectar"
+                android:id="@+id/textView37" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/dra_boton_imagen_fondo"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.33"
+            android:gravity="center_horizontal"
+            android:weightSum="1"
+            android:visibility="gone">
+
+            <ImageButton
+                android:background="?android:selectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:id="@+id/BtnNavegacionHistorial"
+                android:src="@mipmap/icon_listado150"
+                android:onClick="onClick_BtnNavegacionHistorial"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                style="@style/est_boton_imagen_texto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Historial"
+                android:id="@+id/textView7" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/dra_boton_imagen_fondo"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.33"
+            android:gravity="center_horizontal"
+            android:weightSum="1" >
+
+            <ImageButton
+                android:background="?android:selectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:id="@+id/BtnNavegacionMapa"
+                android:src="@mipmap/icon_mapa150"
+                android:onClick="onClick_BtnNavegacionMapa"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                style="@style/est_boton_imagen_texto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Mapa"
+                android:id="@+id/textView6" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/CapRadio"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="gone">
+
+        <TextView
+            style="@style/est_navegacion_contenido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="-"
+            android:id="@+id/CmpCanalActual"
+            android:layout_below="@+id/textView4"
+            android:layout_toLeftOf="@+id/textView41"
+            android:layout_toStartOf="@+id/textView41"
+            android:layout_weight="0.16" />
+    </LinearLayout>
+
+</RelativeLayout>

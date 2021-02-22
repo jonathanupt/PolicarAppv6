@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="policar.policarappv6.IniciarViajeActivity"
+    tools:showIn="@layout/app_bar_iniciar_viaje"
+    android:background="@drawable/dra_fondo_total"
+    >
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/CapIniciarViajeContenidos"
+        >
+
+        <TextView
+            style="@style/est_aviso_viaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No olvide revisar la unidad al finalizar el servicio."
+            android:id="@+id/textView58" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center_vertical|center_horizontal">
+
+                <TextView
+                    style="@style/est_etiqueta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Kilometraje Recorrido:"
+                    android:id="@+id/textView69"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textView25"
+                    android:gravity="left" />
+
+                <TextView
+                    style="@style/est_iniciar_viaje_taximetro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="0 km"
+                    android:id="@+id/CmpIniciarViajeKilometrajeRecorrido"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textView28"
+                    android:layout_weight="0.9"
+                    android:gravity="left" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_below="@+id/CapIniciarViajeContenidos"
+                android:id="@+id/linearLayout6"
+                android:layout_weight="0.5">
+
+                <TextView
+                    style="@style/est_etiqueta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Precio Estimado:"
+                    android:id="@+id/textView75"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textView25"
+                    android:gravity="left" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|center_horizontal">
+
+                    <TextView
+                        style="@style/est_iniciar_viaje_taximetro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="S/."
+                        android:id="@+id/CmpIniciarViajeMonedaSimbolo"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/textView28"
+                        android:gravity="left" />
+
+                    <TextView
+                        style="@style/est_iniciar_viaje_taximetro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="0.00"
+                        android:id="@+id/CmpIniciarViajePrecio"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/textView28"
+                        android:gravity="left" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <fragment
+        android:id="@+id/map1"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/CapIniciarViajeTiempoEspera"
+        android:layout_below="@+id/CapIniciarViajeContenidos" />
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_above="@+id/CapIniciarViajeBotones"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/CapIniciarViajeTiempoEspera"
+        android:visibility="gone">
+
+        <TextView
+            style="@style/est_etiqueta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Tiempo de espera"
+            android:id="@+id/textView74"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView25"
+            android:gravity="left" />
+
+        <TextView
+            style="@style/est_iniciar_viaje_taximetro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="0"
+            android:id="@+id/CmpIniciarViajeCronometroEspera"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView28"
+            android:layout_weight="0.9"
+            android:gravity="left" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/CapIniciarViajeBotones"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:background="@drawable/dra_boton_imagen_fondo"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:gravity="center_horizontal"
+            android:weightSum="1">
+
+            <ImageButton
+                android:background="?android:selectableItemBackground"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:id="@+id/BtnIniciarViajeFinalizar"
+                android:src="@mipmap/icon_ok150"
+                android:onClick="onClick_BtnIniciarViajeFinalizar"
+                android:scaleType="fitCenter"
+                android:layout_weight="8.55" />
+
+            <TextView
+                style="@style/est_boton_imagen_texto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Finalizar Viaje"
+                android:id="@+id/textView8" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

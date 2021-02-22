@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#11AA00</color>
+    <color name="colorPrimaryDark">#272727</color>
+    <color name="colorAccent">#666666</color>
+
+    <color name="ColorFondoPedidoAceptar1">#093</color>
+    <color name="ColorFondoPedidoAceptar2">#33CC00</color>
+    <color name="ColorBotonAceptarPedidoBorde">#33CC00</color>
+
+    <color name="ColorFondoPedidoRechazar1">#FF0405</color>
+    <color name="ColorFondoPedidoRechazar2">#ef4444</color>
+    <color name="ColorBotonRechazaPedidoBorde">#ef4444</color>
+
+    <color name="ColorFondoIntro">#11AA00</color>
+
+
+
+
+    <color name="ColorSombra1">#CCCCCC</color>
+    <color name="ColorSombra2">#000000</color>
+
+    <color name="ColorTitulo">#11AA00</color>
+    <color name="ColorSubTitulo">#13C400</color>
+
+    <color name="ColorEtiqueta">#11AA00</color>
+    <color name="ColorSubEtiqueta">#13C400</color>
+    <color name="ColorContenido">#000000</color>
+    <color name="ColorContenido2">#000000</color>
+
+    <color name="ColorAviso">#808080</color>
+    <color name="ColorImportante">#00CC33</color>
+
+
+    <!--
+    AGREGADOS
+    -->
+
+    <!--
+        IMAGEN FONDO
+        -->
+    <color name="ColorImagenFondoPrimario">#FFFFFF</color>
+    <color name="ColorImagenFondoSecundario">#E8E8E8</color>
+    <color name="ColorImagenBorde">#C70001</color>
+
+
+    <!--
+  MENU CABECERA
+  -->
+
+    <color name="ColorMenuCabecereaFondoPrimario">#13AC02</color>
+    <color name="ColorMenuCabeceraFondoSecundario">#11AA00</color>
+    <color name="ColorMenuCabeceraBorde">#13AC02</color>
+
+    <!--
+ FONDO ACTIVIDAD
+ -->
+
+    <color name="ColorActividadFondoPrimario">#E8E8E8</color>
+    <color name="ColorActividadFondoSecundario">#FFFFFF</color>
+    <color name="ColorActividadBorde">#E8E8E8</color>
+
+    <!--
+   CONTENIDO
+   -->
+
+    <color name="ColorContenidoFondoPrimario">#E8E8E8</color>
+    <color name="ColorContenidoFondoSecundario">#FFFFFF</color>
+    <color name="ColorContenidoBorde">#E8E8E8</color>
+    <!--
+     LISTA ITEM
+     -->
+
+    <color name="ColorListaItemFondoPrimario">#FFFFFF</color>
+    <color name="ColorListaItemFondoSecundario">#E8E8E8</color>
+    <color name="ColorListaItemBorde">#FFFFFF</color>
+
+
+    <!--
+    CAMPO
+    -->
+    <color name="ColorCampoFondoPrimario">#FFFFFF</color>
+    <color name="ColorCampoFondoSecundario">#E8E8E8</color>
+    <color name="ColorCampoBorde">#C5C5C5</color>
+
+
+    <!--
+    COMBO
+    -->
+    <color name="ColorComboFondoPrimario">#FFFFFF</color>
+    <color name="ColorComboFondoSecundario">#E8E8E8</color>
+    <color name="ColorComboBorde">#C5C5C5</color>
+    <color name="ColorComboTexto">#000000</color>
+
+
+    <!--
+    FONDO CAMPO
+    -->
+
+    <color name="ColorFondoCampoPrimario">#FFFFFF</color>
+    <color name="ColorFondoCampoSecundario">#E8E8E8</color>
+    <color name="ColorBordeCampo">#FFFFFF</color>
+    <color name="ColorTextoCampo">#333333</color>
+
+    <!--
+       FONDO FOTO
+       -->
+    <color name="ColorFotoFondoPrimario">#FFFFFF</color>
+    <color name="ColorFotoFondoSecundario">#E8E8E8</color>
+    <color name="ColorFotoBorde">#CCCCCC</color>
+
+    <!--
+        BOTONES FLOTANTES
+        -->
+    <color name="ColorFondoBotonFlotantePrimario">#15469D</color>
+
+    <!--
+    BOTON GENERAL
+    -->
+
+    <color name="ColorBotonFondoPrimario">#13AC02</color>
+    <color name="ColorBotonFondoSecundario">#11AA00</color>
+    <color name="ColorBotonBorde">#13AC02</color>
+    <color name="ColorBotonTexto">#FFFFFF</color>
+
+    <!--
+   BOTON IMAGEN GENERAL
+   -->
+    <color name="ColorBotonImagenFondoPrimario">#13AC02</color>
+    <color name="ColorBotonImagenFondoSecundario">#11AA00</color>
+    <color name="ColorBotonImagenBorde">#13AC02</color>
+    <color name="ColorBotonImagenTexto">#FFFFFF</color>
+
+    <!--
+      BARRA CALIFICACION
+      -->
+    <color name="ColorCalificacionFondoPrimario">#13AC02</color>
+    <color name="ColorCalificacionFondoSecundario">#11AA00</color>
+
+
+
+
+
+    <!--
+        COLORES POR ACTIVIDAD
+        -->
+
+    <!--
+    INICIAR VIAJE
+    -->
+
+    <color name="ColorTextoTaximetro">#808080</color>
+    <color name="ColorTextoPrecio">#808080</color>
+
+    <!--
+ FONDO MONITOREO
+ -->
+
+    <color name="ColorMonitoreoFondoPrimario">#FFFFFF</color>
+    <color name="ColorMonitoreoFondoSecundario">#E8E8E8</color>
+    <color name="ColorMonitoreodBorde">#C5C5C5</color>
+
+
+    <color name="ColorBotonFlotanteFondoPrimario">#0066CC</color>
+    <color name="ColorBotonCoberturaFondoPrimario">#ef4444</color>
+
+    <color name="ColorBotonRadioGrabarFondoPrimario">#093</color>
+    <color name="ColorBotonRadioDetenerFondoPrimario">#ef4444</color>
+    <color name="ColorBotonRadioRecibirFondoPrimario">#11AA00</color>
+
+    <!--
+    FILA NAVEGACION
+    -->
+
+    <color name="ColorNavegacionFilaDireccion">#11AA00</color>
+    <color name="ColorNavegacionFilaReferencia">#272727</color>
+
+    <!--
+    NAVEGACION
+    -->
+    <color name="ColorNavegacionCanal">#0066CC</color>
+    <color name="ColorNavegacionEtiqueta">#FFFFFF</color>
+    <color name="ColorNavegacionContenido">#FFFFFF</color>
+
+    <!--
+    PEDIDO DETALLE
+    -->
+    <color name="ColorPedidoDetalleClienteNombre">#000000</color>
+    <color name="ColorPedidoDetalleDireccion">#272727</color>
+    <color name="ColorPedidoDetalleReferencia">#272727</color>
+
+    <color name="ColorPedidoDetalleTipoUnidad">#808080</color>
+    <color name="ColorPedidoDetalleDetalle">#808080</color>
+
+    <!--
+   PEDIDO ACTUAL
+   -->
+    <color name="ColorPedidoActualClienteNombre">#000000</color>
+    <color name="ColorPedidoActualDireccion">#272727</color>
+    <color name="ColorPedidoActualReferencia">#272727</color>
+    <color name="ColorPedidoActualClienteCelular">#808080</color>
+    <color name="ColorPedidoActualDetalle">#808080</color>
+
+    <color name="ColorTextoCronometro">#808080</color>
+
+    <!--
+HISTORIAL
+   -->
+    <color name="ColorHistorialDireccion">#11AA00</color>
+    <color name="ColorHistorialReferencia">#C5C5C5</color>
+    <color name="ColorHistorialFecha">#C5C5C5</color>
+    <color name="ColorHistorialVehiculoDato">#11AA00</color>
+    <color name="ColorHistorialConductorNombre">#000000</color>
+
+    <!--
+RANKING
+   -->
+    <color name="ColorRankingContador">#11AA00</color>
+
+    <!--
+RECEPCIONAR PEDIDO
+   -->
+    <color name="ColorRecepcionarPedidoContador">#11AA00</color>
+
+</resources>
