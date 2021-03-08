@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Policar App - Conductor</string>
 
-    <string name="app_url">http://policartacnav2.ddns.net:8080/apppolicar</string>
-    <string name="app_url2">http://policartacnav2.ddns.net:8080/apppolicar</string>
+    <string name="app_url">http://policarapp.ddns.net/apppolicar</string>
+    <string name="app_url2">http://policarapp.ddns.net/apppolicar</string>
 
-    <string name="app_version">Policar App - Conductor v.1.6</string>
-    <string name="app_version_numero">1.6</string>
+    <string name="app_version">Policar App - Conductor v.1.7</string>
+    <string name="app_version_numero">1.7</string>
     <string name="app_titulo">Policar App - Conductor</string>
     <string name="app_lema">Seguridad y Confianza</string>
     <string name="alert_title">Policar App - Conductor</string>
@@ -85,9 +85,9 @@
     <string name="title_activity_radio">RadioActivity</string>
 
 
-    <string name="webservice_jnpedido">JnPedidov2.php</string>
+    <string name="webservice_jnpedido">JnPedido.php</string>
     <string name="webservice_jncliente">JnCliente.php</string>
-    <string name="webservice_jnconductor">JnConductorv2.php</string>
+    <string name="webservice_jnconductor">JnConductor.php</string>
     <string name="webservice_jnpublicidad">JnPublicidad.php</string>
     <string name="webservice_jnmapa">JnMapa.php</string>
     <string name="webservice_jnradiomensaje">JnRadioMensaje.php</string>

@@ -325,6 +325,13 @@ public class NavegacionActivity extends AppCompatActivity
 
     private String PedidoEsNoche = "2";
     private String PedidoEsFestivo = "2";
+
+
+    private TextView txtSector;
+
+
+
+
     //ONSTART -> ON CREATE -> ONRESTART
     @Override
     protected void onStart() {
@@ -636,6 +643,7 @@ public class NavegacionActivity extends AppCompatActivity
         TextView TxtVehiculoColor = (TextView) findViewById(R.id.CmpVehiculoColor);
         TxtVehiculoColor.setText(VehiculoColor);
 
+        txtSector = (TextView) findViewById(R.id.CmpNavegacionSector);
 
         txtCanalActual = (TextView) findViewById(R.id.CmpCanalActual);
 
@@ -680,7 +688,10 @@ public class NavegacionActivity extends AppCompatActivity
 
         //REGION Y SECTOR
         RegionId = sharedPreferences2.getString("RegionId", "");
+        RegionNombre = sharedPreferences2.getString("RegionId", "");
+
         SectorId = sharedPreferences2.getString("SectorId", "");
+        SectorNombre = sharedPreferences2.getString("SectorNombre", "");
 
         //PREFERENCIAS
         MonitoreoSonido = sharedPreferences2.getBoolean("MonitoreoSonido",true);
@@ -688,6 +699,9 @@ public class NavegacionActivity extends AppCompatActivity
         TipoRadio = sharedPreferences2.getString("TipoRadio","T3GP");
 
         Log.e("TipoRadio",TipoRadio);
+
+        txtSector.setText(SectorNombre);
+
 
         //RECUPERANDO VARIABLES
         Intent intentExtras = getIntent();
@@ -1226,6 +1240,8 @@ public class NavegacionActivity extends AppCompatActivity
 
                                         if(!JsSectorId.equals(SectorId)) {
                                             FncMostrarToast("Bienvenid@ a Sector "+JsSectorNombre);
+                                            txtSector.setText(JsSectorNombre);
+
                                         }
 
                                         RegionId = JsRegionId;
@@ -1233,6 +1249,8 @@ public class NavegacionActivity extends AppCompatActivity
 
                                         SectorId = JsSectorId;
                                         SectorNombre = JsSectorNombre;
+
+
 
                                         //editor.putString("RegionId", JsRegionId);
 //                                        editor.putString("RegionNombre", JsRegionNombre);
@@ -1628,7 +1646,7 @@ public class NavegacionActivity extends AppCompatActivity
 
 
 
-
+/*
 
         if(timerNavegacion4!=null){
             timerNavegacion4.cancel();
@@ -1841,7 +1859,7 @@ public class NavegacionActivity extends AppCompatActivity
 
         }, 1000, 2200);
 
-
+*/
 
 
         //TAREA OBTENER  ALERTAS
@@ -2144,7 +2162,7 @@ for(int i=0;i<=radioMensaje.size();i++){
 
         fab6.setOnClickListener(this);
         fabRadio.setOnClickListener(this);
-
+/*
         switch (ConductorCanal) {
             case "1":
                 fab4.setVisibility(View.GONE);
@@ -2202,7 +2220,7 @@ for(int i=0;i<=radioMensaje.size();i++){
                 break;
         }
 
-
+*/
         //  File tmp = new File( Environment.getExternalStorageDirectory().getAbsolutePath()+"/radio/", "lol.mp3");
 
         mAudioPlayHelper = new AudioPlayHelper<>(new AudioPlayHelper.RecordPlayListener<Object>() {
@@ -4401,6 +4419,7 @@ for(int i=0;i<=radioMensaje.size();i++){
 
         AlertDialog.Builder helpBuilder = new AlertDialog.Builder(this);
         helpBuilder.setTitle(getString(R.string.app_titulo));
+        helpBuilder.setIcon(R.mipmap.ic_launcher);
         helpBuilder.setMessage(getString(R.string.app_version));
         helpBuilder.setPositiveButton("Aceptar",
                 new DialogInterface.OnClickListener() {

@@ -58,30 +58,31 @@
         android:layout_weight="0.01">
 
         <LinearLayout
-            android:background="@drawable/dra_boton_imagen_fondo"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
+            android:background="@drawable/dra_boton_imagen_fondo"
             android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone"
             android:weightSum="1">
 
             <ImageButton
-                android:background="?android:selectableItemBackground"
+                android:id="@+id/BtnConductorDesconectadoAjustar"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:id="@+id/BtnConductorDesconectadoAjustar"
-                android:src="@mipmap/icon_ajustes150"
+                android:background="?android:selectableItemBackground"
                 android:onClick="onClick_BtnConductorDesconectadoAjustar"
-                android:scaleType="fitCenter" />
+                android:scaleType="fitCenter"
+                android:src="@mipmap/icon_ajustes150" />
 
             <TextView
+                android:id="@+id/textView17"
                 style="@style/est_boton_imagen_texto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Ajustes"
-                android:id="@+id/textView17" />
+                android:textAppearance="?android:attr/textAppearanceSmall" />
         </LinearLayout>
 
         <LinearLayout

@@ -31,38 +31,55 @@
                 android:layout_margin="2dp" />
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <TextView android:id="@+id/CmpPedidoDireccion"
-                    android:textSize="14sp"
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:text="mi destino"
-
+                <TextView
+                    android:id="@+id/CmpPedidoClienteNombre"
                     style="@style/est_navegacion_fila_direccion"
 
-                    android:layout_below="@+id/textView27"
-                    android:layout_alignLeft="@+id/textView27"
-                    android:layout_alignStart="@+id/textView27" />
-
-                <TextView android:id="@+id/CmpConductorNombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="mi referencia"
+                    android:layout_below="@+id/textView27"
 
+                    android:layout_alignStart="@+id/textView27"
+
+                    android:layout_alignLeft="@+id/textView27"
+                    android:text="NOMBRE DE CLIENTE"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/CmpPedidoDireccion"
+                    style="@style/est_navegacion_fila_direccion"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/textView27"
+
+                    android:layout_alignStart="@+id/textView27"
+
+                    android:layout_alignLeft="@+id/textView27"
+                    android:text="mi destino"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/CmpPedidoReferencia"
                     style="@style/est_navegacion_fila_referencia"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
 
                     android:layout_below="@+id/textView28"
-                    android:layout_alignLeft="@+id/textView28"
+
                     android:layout_alignStart="@+id/textView28"
-                    android:layout_alignRight="@+id/CmpNumero"
+                    android:layout_alignLeft="@+id/textView28"
                     android:layout_alignEnd="@+id/CmpNumero"
-                    android:layout_weight="1" />
+                    android:layout_alignRight="@+id/CmpNumero"
+                    android:layout_weight="1"
+                    android:text="mi referencia" />
             </LinearLayout>
         </LinearLayout>
 

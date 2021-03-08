@@ -46,6 +46,20 @@
     </style>
 
 
+    <style name="est_navegacion_sector">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/ColorNavegacionSector</item>
+
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">bold</item>
+        <!-- <item name="android:shadowColor">@color/ColorSombra1</item>-->
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
     <!--  INICIAR VIAJE ACTIVITY -->
 
     <style name="est_iniciar_viaje_taximetro">

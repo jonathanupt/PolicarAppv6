@@ -44,68 +44,70 @@
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="right" >
+            android:background="@drawable/dra_boton_imagen_fondo"
+            android:gravity="right"
+            android:orientation="horizontal">
 
             <ImageButton
-                android:background="?android:selectableItemBackground"
+                android:id="@+id/imageButton4"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:id="@+id/imageButton4"
-                android:src="@mipmap/icon_calendario150"
-                android:onClick="FncEscogerFecha"
                 android:layout_above="@+id/LstFavoritos"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:scaleType="fitCenter" />
+                android:layout_alignParentRight="true"
+                android:background="?android:selectableItemBackground"
+                android:onClick="FncEscogerFecha"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/icon_calendario150" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:id="@+id/CapBuscador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/CapBuscador"
-        android:weightSum="1"
         android:layout_below="@+id/CapFiltro"
+        android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="1">
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.95"
-            android:gravity="left" >
+            android:gravity="left"
+            android:orientation="horizontal">
 
             <EditText
+                android:id="@+id/CmpFiltro"
                 style="@style/est_contenido"
-                android:background="@drawable/dra_campo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/CmpFiltro"
+                android:background="@drawable/dra_campo"
                 android:hint="Buscar..." />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="right" >
+            android:gravity="right"
+            android:orientation="horizontal">
 
             <ImageButton
-                android:background="?android:selectableItemBackground"
+                android:id="@+id/imageButton5"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:id="@+id/imageButton5"
-                android:src="@mipmap/icon_buscar150"
-                android:onClick="onClick_BtnHistorialFiltrar"
                 android:layout_above="@+id/LstFavoritos"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:scaleType="fitCenter" />
+                android:layout_alignParentRight="true"
+                android:background="?android:selectableItemBackground"
+                android:onClick="onClick_BtnHistorialFiltrar"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/icon_buscar150" />
         </LinearLayout>
     </LinearLayout>
 

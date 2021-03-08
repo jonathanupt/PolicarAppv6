@@ -32,6 +32,9 @@
     <color name="ColorImportante">#00CC33</color>
 
 
+    <color name="ColorCintaFondoColorPrimario">#CCCCCC</color>
+    <color name="ColorCintaFondoColorSecundario">#CCCCCC</color>
+    <color name="ColoCintaColorBorde">#CCCCC0</color>
     <!--
     AGREGADOS
     -->
@@ -181,6 +184,8 @@
     <color name="ColorNavegacionCanal">#0066CC</color>
     <color name="ColorNavegacionEtiqueta">#FFFFFF</color>
     <color name="ColorNavegacionContenido">#FFFFFF</color>
+
+    <color name="ColorNavegacionSector">#666666</color>
 
     <!--
     PEDIDO DETALLE

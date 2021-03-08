@@ -48,7 +48,10 @@ public class NavegacionAdapter extends BaseAdapter {
             holder = new ViewHolder();
 
             holder.txtPedidoDireccion = (TextView) convertView.findViewById(R.id.CmpPedidoDireccion);
-            holder.txtPedidoReferencia = (TextView) convertView.findViewById(R.id.CmpConductorNombre);
+            holder.txtPedidoReferencia = (TextView) convertView.findViewById(R.id.CmpPedidoReferencia);
+
+            holder.txtClienteNombre = (TextView) convertView.findViewById(R.id.CmpPedidoClienteNombre);
+
             //holder.txtPedidoFecha = (TextView) convertView.findViewById(R.id.CmpPedidoFecha);
            // holder.txtPedidoHora = (TextView) convertView.findViewById(R.id.CmpPedidoHora);
             holder.imgPedidoFoto = (ImageView) convertView.findViewById(R.id.imgConductorCanalFoto);
@@ -61,6 +64,8 @@ public class NavegacionAdapter extends BaseAdapter {
 
         holder.txtPedidoDireccion.setText(searchArrayList.get(position).getPedidoDireccion());
         holder.txtPedidoReferencia.setText(searchArrayList.get(position).getPedidoReferencia());
+
+        holder.txtClienteNombre.setText(searchArrayList.get(position).getClienteNombre());
 
        // holder.txtPedidoFecha.setText(searchArrayList.get(position).getPedidoFecha());
        // holder.txtPedidoHora.setText(searchArrayList.get(position).getPedidoHora());
@@ -103,7 +108,7 @@ c azzul
         TextView txtPedidoFecha;
         TextView txtPedidoHora;
 
-        //TextView txtClienteNombre;
+        TextView txtClienteNombre;
         ImageView imgPedidoFoto;
 
     }

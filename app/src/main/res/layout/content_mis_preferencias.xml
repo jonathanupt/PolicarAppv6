@@ -54,7 +54,7 @@
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:id="@+id/imageView19"
-                            android:src="@mipmap/icon_audio120" />
+                            android:src="@drawable/icon_sonido120" />
 
                         <TextView
                             style="@style/est_etiqueta"
@@ -101,7 +101,7 @@
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:id="@+id/imageView20"
-                            android:src="@mipmap/icon_pantalla120" />
+                            android:src="@drawable/icon_pantalla120" />
 
                         <TextView
                             style="@style/est_etiqueta"
@@ -149,7 +149,7 @@
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:id="@+id/imageView29"
-                            android:src="@mipmap/icon_gps120" />
+                            android:src="@drawable/icon_gps120" />
 
                         <TextView
                             style="@style/est_etiqueta"
@@ -183,123 +183,125 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="top" >
-
-                        <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:id="@+id/imageView30"
-                            android:src="@mipmap/icon_limpiar120" />
-
-                        <TextView
-                            style="@style/est_etiqueta"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TEMPORALES:"
-                            android:id="@+id/textView56"
-                            android:layout_alignParentStart="true"
-                            android:layout_alignParentLeft="true"
-                            android:layout_below="@+id/textView39" />
-                    </LinearLayout>
-
-                    <TextView
-                        style="@style/est_subetiqueta"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Limpiar archivos temporales generdos"
-                        android:id="@+id/textView60"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_below="@+id/textView56" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <Button
+                        android:id="@+id/BtnMisPreferenciasLimpiarTemporales"
                         style="?android:attr/buttonStyleSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Limpiar"
-                        android:id="@+id/BtnMisPreferenciasLimpiarTemporales"
-                        android:onClick="onClick_BtnMisPreferenciasLimpiarTemporales" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                        android:onClick="onClick_BtnMisPreferenciasLimpiarTemporales"
+                        android:text="Limpiar" />
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="top" >
+                        android:gravity="top"
+                        android:orientation="horizontal">
 
                         <ImageView
+                            android:id="@+id/imageView30"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
-                            android:id="@+id/imageView35"
-                            android:src="@mipmap/icon_tipo_radio120" />
+                            android:src="@mipmap/icon_limpiar120" />
 
                         <TextView
+                            android:id="@+id/textView56"
                             style="@style/est_etiqueta"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TIPO DE RADIO:"
-                            android:id="@+id/textView62"
+                            android:layout_below="@+id/textView39"
                             android:layout_alignParentStart="true"
                             android:layout_alignParentLeft="true"
-                            android:layout_below="@+id/textView39" />
-
+                            android:text="TEMPORALES:" />
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/textView60"
                         style="@style/est_subetiqueta"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Segun tu modelo de celular escoge el tipo de radio a utilizar"
-                        android:id="@+id/textView63"
+                        android:layout_below="@+id/textView56"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentLeft="true"
-                        android:layout_below="@+id/textView62" />
+                        android:text="Limpiar archivos temporales generdos" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="top"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView35"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@mipmap/icon_tipo_radio120" />
+
+                        <TextView
+                            android:id="@+id/textView62"
+                            style="@style/est_etiqueta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textView39"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentLeft="true"
+                            android:text="TIPO DE RADIO:" />
+
+                    </LinearLayout>
 
                     <RadioGroup
                         android:id="@+id/TipoRadioGroup"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
                         android:layout_below="@+id/CmpMensaje"
+                        android:layout_alignParentStart="true"
                         android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true" >
+                        android:orientation="vertical">
 
                         <RadioButton
-                            style="@style/est_contenido2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="T3GP"
                             android:id="@+id/TipoRadioButton1"
-                            android:layout_below="@+id/CmpMensaje"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentStart="true"
-                            android:checked="false" />
-
-                        <RadioButton
                             style="@style/est_contenido2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TMP3"
-                            android:id="@+id/TipoRadioButton2"
-                            android:layout_below="@+id/radioButton2"
-                            android:layout_alignParentLeft="true"
+                            android:layout_below="@+id/CmpMensaje"
                             android:layout_alignParentStart="true"
-                            android:checked="false" />
+                            android:layout_alignParentLeft="true"
+                            android:checked="false"
+                            android:text="T3GP" />
+
+                        <RadioButton
+                            android:id="@+id/TipoRadioButton2"
+                            style="@style/est_contenido2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/radioButton2"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentLeft="true"
+                            android:checked="false"
+                            android:text="TMP3" />
 
                     </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/textView63"
+                        style="@style/est_subetiqueta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView62"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:text="Segun tu modelo de celular escoge el tipo de radio a utilizar" />
 
                 </LinearLayout>
 

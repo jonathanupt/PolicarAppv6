@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.1'
+    compileSdkVersion 29
+    buildToolsVersion '29.0.1'
 
     defaultConfig {
         applicationId "policar.policarappv6"
         minSdkVersion 15
-        targetSdkVersion 26
-        versionCode 6
-        versionName "1.6"
+        targetSdkVersion 29
+        versionCode 7
+        versionName "1.7"
         multiDexEnabled true
     }
     buildTypes {
@@ -27,12 +27,13 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:26.0.1'
-    compile 'com.android.support:design:26.0.1'
-    compile 'com.google.android.gms:play-services:8.3.0'
-    compile 'com.loopj.android:android-async-http:1.4.9'
-    compile 'net.qiujuer.lame:lame:1.0.0'
-    //compile 'com.github.chathuralakmal:AndroidImagePopup:1.0.9'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:26.0.1'
+    implementation 'com.android.support:design:26.0.1'
+    implementation 'com.google.android.gms:play-services:8.3.0'
+    implementation 'com.loopj.android:android-async-http:1.4.9'
+    implementation 'net.qiujuer.lame:lame:1.0.0'
+    //implementation 'com.github.chathuralakmal:AndroidImagePopup:1.0.9'
 }
