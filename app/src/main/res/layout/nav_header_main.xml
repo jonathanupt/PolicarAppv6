@@ -31,10 +31,5 @@
         android:layout_height="wrap_content"
         android:text="@string/app_lema" />
 
-    <TextView
-        android:id="@+id/CmpUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="" />
 
 </LinearLayout>

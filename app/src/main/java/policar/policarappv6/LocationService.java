@@ -4,11 +4,15 @@ package policar.policarappv6;
  * Created by Jonathan on 15/12/2016.
  */
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Location;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
@@ -44,11 +48,76 @@ public class LocationService extends Service implements
     private LocationRequest locationRequest;
     private GoogleApiClient googleApiClient;
 
+
+
+
+
+    // Binder given to clients
+    // Registered callbacks
+    private static final String LOGSERVICE = "#######";
+    private LocationRequest mLocationRequest;
+    private GoogleApiClient mGoogleApiClient;
+    Context c = this;
+    NotificationClass nc = new NotificationClass();
+    public static int PacketSize;
+    public static int LocationInterval;
+    public static int LocationFastestInterval;
+    /// private static final int drawableIcon = R.drawable.cast_ic_notification_small_icon;
+    public static PendingIntent contentIntent;
+    public static String NotificationTxt;
+    public static String NotificationTitle;
+    public static int drawable_small;
+
+
     @Override
     public void onCreate() {
         super.onCreate();
         //defaultUploadWebsite = getString(R.string.default_upload_website);
         defaultUploadWebsite = getString(R.string.app_url2)+"/webservice/"+getString(R.string.webservice_jnconductorubicacion);
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+            Log.e("LocationService","OREO SI");
+
+            //Creating Channel
+            nc.createMainNotificationChannel(this);
+            //building Notification.
+            Notification.Builder notifi = new Notification.Builder(getApplicationContext(), nc.getMainNotificationId());
+            // notifi.setSmallIcon(drawable_small);
+            notifi.setSmallIcon(R.mipmap.icon_logo75);
+            notifi.setContentTitle(NotificationTitle);
+            notifi.setContentText(NotificationTxt);
+            notifi.setContentIntent(contentIntent);
+            //getting notification object from notification builder.
+            Notification n = notifi.build();
+
+            int mNotificationId = 001;
+
+            NotificationManager mNotificationManager =
+                    (NotificationManager) c.getSystemService(Context.NOTIFICATION_SERVICE);
+            mNotificationManager.notify(mNotificationId, n);
+
+            //  startting foreground
+            startForeground(1, n);
+
+
+        } else {
+            Log.e("LocationService","OREO NO");
+            //for devices less than API Level 26
+            Notification notification = new Notification.Builder(getApplicationContext())
+                    .setContentTitle(NotificationTitle)
+                    .setContentText(NotificationTxt)
+                    // .setSmallIcon(drawable_small)
+                    .setSmallIcon(R.mipmap.icon_logo75)
+                    .setContentIntent(contentIntent)
+                    .setOngoing(true).build();
+            startForeground(1, notification);
+
+        }
+
+
+
 
     }
 

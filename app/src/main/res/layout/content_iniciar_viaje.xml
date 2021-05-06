@@ -43,16 +43,16 @@
                 android:gravity="center_vertical|center_horizontal">
 
                 <TextView
+                    android:id="@+id/textView69"
                     style="@style/est_etiqueta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Kilometraje Recorrido:"
-                    android:id="@+id/textView69"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
                     android:layout_below="@+id/textView25"
-                    android:gravity="left" />
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="left"
+                    android:text="Km. Recorrido:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
                     style="@style/est_iniciar_viaje_taximetro"

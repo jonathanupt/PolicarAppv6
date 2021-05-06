@@ -4,14 +4,16 @@
     <string name="app_url">http://policarapp.ddns.net/apppolicar</string>
     <string name="app_url2">http://policarapp.ddns.net/apppolicar</string>
 
-    <string name="app_version">Policar App - Conductor v.1.7</string>
-    <string name="app_version_numero">1.7</string>
+    <string name="app_version">Policar App - Conductor v.1.9</string>
+    <string name="app_version_numero">1.9</string>
     <string name="app_titulo">Policar App - Conductor</string>
     <string name="app_lema">Seguridad y Confianza</string>
     <string name="alert_title">Policar App - Conductor</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="app_google_apikey">AIzaSyBKVqmjbLdL2BodEBO4Iw7wnXW1aKZ_Pp0</string>
 
     <string name="action_index">Index</string>
     <string name="action_ubicame">Ubicame</string>
@@ -97,6 +99,9 @@
     <string name="webservice_jnconductoralerta">JnConductorAlerta.php</string>
 
     <string name="title_activity_ranking">Ranking 10</string>
+    <string name="title_activity_nuevo_intro">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 
 </resources>

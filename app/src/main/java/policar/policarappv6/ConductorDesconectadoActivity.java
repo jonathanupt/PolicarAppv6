@@ -432,14 +432,14 @@ public class ConductorDesconectadoActivity extends AppCompatActivity
 
                 case 2:
 
-                    int result2 = ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION);
+                    int result2 = ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION);
 
                     if (result2 == PackageManager.PERMISSION_GRANTED) {
                         Log.e("ConductorDesconectado10","AAA");
                         respuesta = true;
                     }else {
                         respuesta = false;
-                        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, permiso);
+                        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, permiso);
                         Log.e("ConductorDesconectado10", "BBB");
                     }
 

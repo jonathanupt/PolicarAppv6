@@ -31,4 +31,53 @@
           android:layout_margin="@dimen/fab_margin"
           android:src="@android:drawable/ic_dialog_email" />-->
 
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/FabIniciarViajeUbicar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/ubicacion_margin_bottom"
+        android:layout_gravity="bottom|end"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:visibility="visible"
+        app:backgroundTint="@color/ColorFondoBotonFlotantePrimario"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        android:src="@drawable/icon_accion_ubicar150"
+        app:fabSize="normal"
+        />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/FabIniciarViajeAumentar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/aumentar_margin_bottom"
+        android:layout_gravity="bottom|end"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:visibility="visible"
+        app:backgroundTint="@color/ColorFondoBotonFlotantePrimario"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        android:src="@drawable/icon_accion_aumentar150"
+        app:fabSize="normal"
+        />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/FabIniciarViajeReducir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/reducir_margin_bottom"
+        android:layout_gravity="bottom|end"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:visibility="visible"
+        app:backgroundTint="@color/ColorFondoBotonFlotantePrimario"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        android:src="@drawable/icon_accion_reducir150"
+        app:fabSize="normal"
+        />
+
+    
+    
+
 </android.support.design.widget.CoordinatorLayout>

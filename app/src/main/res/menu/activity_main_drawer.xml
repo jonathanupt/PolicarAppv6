@@ -8,18 +8,16 @@
             android:icon="@mipmap/icon_inicio50"
             android:title="@string/action_inicio" />
 
-
         <item
             android:id="@+id/nav_crear_cuenta"
             android:icon="@mipmap/icon_crearcuenta50"
-            android:title="@string/action_crear_cuenta" />
+            android:title="@string/action_crear_cuenta"
+            android:visible="false"/>
 
         <item
             android:id="@+id/nav_acerca_de"
             android:icon="@mipmap/icon_acercade50"
             android:title="@string/action_acerca_de" />
-
-
 
     </group>
 

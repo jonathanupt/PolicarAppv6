@@ -34,278 +34,276 @@
             android:weightSum="1" >
 
             <LinearLayout
-                android:orientation="vertical"
+                android:id="@+id/CapContenidos"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@drawable/dra_fondo_contenido"
-                android:id="@+id/CapContenidos">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/CapPedidoActualTipoAccion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/CapPedidoActualTipoAccion"
                     android:layout_gravity="right"
                     android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
                     android:visibility="gone">
 
                     <ImageView
+                        android:id="@+id/ImgPedidoActualTipoAccion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/ImgPedidoActualTipoAccion"
                         android:src="@mipmap/icon_tipo_taxi150" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/CapClienteNombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="top"
-                    android:id="@+id/CapClienteNombre">
+                    android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/imageView9"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:id="@+id/imageView9"
                         android:src="@mipmap/icon_cliente120" />
 
                     <TextView
+                        android:id="@+id/CmpClienteNombre"
                         style="@style/est_pedido_actual_cliente_nombre"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="NOMBRE DEL CLIENTE"
-                        android:id="@+id/CmpClienteNombre"
                         android:layout_below="@+id/CmpNumero"
-                        android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
                         android:layout_weight="0.61"
-                        android:gravity="left" />
+                        android:gravity="left"
+                        android:text="NOMBRE DEL CLIENTE"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/CapPedidoDireccion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="top"
-                    android:id="@+id/CapPedidoDireccion">
+                    android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/imageView2"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:id="@+id/imageView2"
                         android:src="@mipmap/icon_direccion120" />
 
                     <TextView
+                        android:id="@+id/CmpPedidoDireccion"
                         style="@style/est_pedido_actual_direccion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="DIRECCION DEL PEDIDO"
-                        android:id="@+id/CmpPedidoDireccion"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
                         android:layout_below="@+id/textView25"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
                         android:layout_weight="0.9"
-                        android:gravity="left" />
+                        android:gravity="left"
+                        android:text="DIRECCION DEL PEDIDO"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/CapPedidoReferencia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="top"
-                    android:id="@+id/CapPedidoReferencia">
+                    android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/imageView7"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:id="@+id/imageView7"
                         android:src="@mipmap/icon_referencia120" />
 
                     <TextView
+                        android:id="@+id/CmpConductorNombre"
                         style="@style/est_pedido_actual_referencia"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="REFERENCIA DEL PEDIDO"
-                        android:id="@+id/CmpConductorNombre"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
                         android:layout_below="@+id/textView28"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
                         android:layout_weight="0.9"
-                        android:gravity="left" />
+                        android:gravity="left"
+                        android:text="REFERENCIA DEL PEDIDO"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/CapPedidoActualLugarCompra"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="top"
-                    android:id="@+id/CapPedidoActualLugarCompra" >
+                    android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/imageView6"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:id="@+id/imageView6"
                         android:src="@mipmap/icon_tienda120" />
 
                     <TextView
+                        android:id="@+id/CmpPedidoActualLugarCompra"
                         style="@style/est_pedido_actual_cliente_nombre"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="LUGAR DE COMPRA"
-                        android:id="@+id/CmpPedidoActualLugarCompra"
                         android:layout_below="@+id/CmpNumero"
-                        android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
                         android:layout_weight="0.61"
-                        android:gravity="left" />
+                        android:gravity="left"
+                        android:text="LUGAR DE COMPRA"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="top"
                     android:id="@+id/CapClienteCelular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:orientation="horizontal"
                     android:visibility="gone">
 
                     <ImageView
+                        android:id="@+id/imageView3"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:id="@+id/imageView3"
                         android:src="@mipmap/icon_celular120" />
 
                     <TextView
+                        android:id="@+id/CmpClienteCelular"
                         style="@style/est_pedido_actual_cliente_celular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="952216928"
-                        android:id="@+id/CmpClienteCelular"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
                         android:layout_below="@+id/textView31"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
                         android:layout_weight="0.45"
-                        android:gravity="left" />
+                        android:gravity="left"
+                        android:text="952216928"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/CapPedidoDetalle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="top"
-                    android:id="@+id/CapPedidoDetalle" >
+                    android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/imageView27"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:id="@+id/imageView27"
                         android:src="@mipmap/icon_detalle120" />
 
                     <TextView
+                        android:id="@+id/CmpPedidoDetalle"
                         style="@style/est_pedido_actual_detalle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="DETALLE DE COMPRA"
-                        android:id="@+id/CmpPedidoDetalle"
                         android:layout_below="@+id/CmpNumero"
-                        android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
                         android:layout_weight="0.61"
-                        android:gravity="left" />
+                        android:gravity="left"
+                        android:text="DETALLE DE COMPRA"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/CapPedidoActualCronometro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/CapPedidoActualCronometro"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/imageView41"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:id="@+id/imageView41"
                         android:src="@mipmap/icon_cronometro120" />
 
                     <Chronometer
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:id="@+id/CroTardanza"
                         style="@style/est_pedido_actual_cronometro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="00:00:00" />
+
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/CapPedidoTiempoDistancia"
                     android:layout_width="match_parent"
-                    android:layout_height="19dp"
+                    android:layout_height="wrap_content"
                     android:gravity="top"
-                    android:id="@+id/CapPedidoTiempoDistancia" >
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:orientation="horizontal"
+                        android:id="@+id/CapPedidoDistancia"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight="0.5"
-                        android:id="@+id/CapPedidoDistancia">
+                        android:orientation="horizontal">
 
                         <ImageView
+                            android:id="@+id/imageView32"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
-                            android:id="@+id/imageView32"
                             android:src="@mipmap/icon_distancia120" />
 
                         <TextView
-                            style="@style/est_pedido_actual_detalle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="0.0 km"
                             android:id="@+id/CmpPedidoDistancia"
+                            style="@style/est_pedido_actual_detalle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_below="@+id/CmpNumero"
-                            android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true"
-                            android:layout_weight="0.61"
+                            android:layout_alignParentLeft="true"
                             android:gravity="left"
-                            android:lines="3" />
+                            android:text="0.0 km"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:orientation="horizontal"
+                        android:id="@+id/CapPedidoTiempo"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight="0.5"
-                        android:id="@+id/CapPedidoTiempo">
+                        android:orientation="horizontal">
 
                         <ImageView
+                            android:id="@+id/imageView31"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
-                            android:id="@+id/imageView31"
                             android:src="@mipmap/icon_tiempo120" />
 
                         <TextView
+                            android:id="@+id/CmpPedidoTiempo"
                             style="@style/est_pedido_actual_detalle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:text="0 min"
-                            android:id="@+id/CmpPedidoTiempo"
                             android:layout_below="@+id/CmpNumero"
-                            android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true"
+                            android:layout_alignParentLeft="true"
                             android:layout_weight="0.61"
                             android:gravity="left"
-                            android:lines="3" />
+                            android:text="0 min"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
                     </LinearLayout>
 
                 </LinearLayout>

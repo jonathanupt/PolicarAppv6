@@ -672,11 +672,12 @@ public class NavegacionActivity extends AppCompatActivity
         if (checkPermission(1)) {
             createMapView();
         }
-
+/*
         //CREANDO CARPETA
         if (checkPermission(4)) {
             MtdCrearCarpetaRadio();
         }
+*/
 
         //RADIO
         ConductorCanal = sharedPreferences2.getString("ConductorCanal", "0");
@@ -2378,14 +2379,14 @@ for(int i=0;i<=radioMensaje.size();i++){
 
                 case 2:
 
-                    int result2 = ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION);
+                    int result2 = ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION);
 
                     if (result2 == PackageManager.PERMISSION_GRANTED) {
                         Log.e("Navegacion10", "2AAA");
                         respuesta = true;
                     } else {
                         respuesta = false;
-                        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, permiso);
+                        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, permiso);
                         Log.e("Navegacion10", "2BBB");
                     }
 

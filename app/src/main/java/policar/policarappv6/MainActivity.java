@@ -1,6 +1,7 @@
 package policar.policarappv6;
 
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -241,7 +242,7 @@ public class MainActivity extends AppCompatActivity
         ActionBar actionBar = getSupportActionBar();
 
         actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setIcon(R.mipmap.ic_launcher);             //Establecer icono
+        //actionBar.setIcon(R.drawable.icon_logo_solo);             //Establecer icono
         //actionBar.setTitle("Acceso a Cuenta");        //Establecer titulo
         actionBar.setTitle(getString(R.string.title_activity_main));     //Establecer Subtitulo
 
@@ -484,13 +485,23 @@ public class MainActivity extends AppCompatActivity
 
     public void MtdEstablecerIdentificador() {
 
-        //IDENTIFICANDO EQUIPO
-        final TelephonyManager tm = (TelephonyManager) getBaseContext().getSystemService(Context.TELEPHONY_SERVICE);
-        final String tmDevice, tmSerial, androidId; tmDevice = "" + tm.getDeviceId();
-        tmSerial = "" + tm.getSimSerialNumber();
-        androidId = "" + android.provider.Settings.Secure.getString(getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
-        UUID deviceUuid = new UUID(androidId.hashCode(), ((long)tmDevice.hashCode() << 32) | tmSerial.hashCode());
-        Identificador = deviceUuid.toString();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+
+            Identificador =  Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
+
+        }else{
+
+
+            //IDENTIFICANDO EQUIPO
+            final TelephonyManager tm = (TelephonyManager) getBaseContext().getSystemService(Context.TELEPHONY_SERVICE);
+            final String tmDevice, tmSerial, androidId; tmDevice = "" + tm.getDeviceId();
+            tmSerial = "" + tm.getSimSerialNumber();
+            androidId = "" + android.provider.Settings.Secure.getString(getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
+            UUID deviceUuid = new UUID(androidId.hashCode(), ((long)tmDevice.hashCode() << 32) | tmSerial.hashCode());
+            Identificador = deviceUuid.toString();
+
+        }
 
     }
 
@@ -676,7 +687,6 @@ public class MainActivity extends AppCompatActivity
 
                                     JSONObject jsonObject = new JSONObject(resMainAcceder);
                                     JsRespuesta = jsonObject.getString("Respuesta");
-
 
                                     JsRegionId = jsonObject.getString("RegionId");
                                     JsRegionNombre = jsonObject.getString("RegionNombre");

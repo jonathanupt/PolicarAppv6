@@ -2,14 +2,131 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="policar.policarappv6">
 
-    <uses-permission android:name="taxiplazasurappv6.permission.MAPS_RECEIVE" />
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
 
+
+        <activity
+            android:name=".NuevoIntroActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.Fullscreen">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".IntroActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity> <!-- <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" /> -->
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".NavegacionActivity"
+            android:label="@string/title_activity_navegacion"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CrearCuentaActivity"
+            android:label="@string/title_activity_crear_cuenta"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".HistorialActivity"
+            android:label="@string/title_activity_historial"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".ConductorDesconectadoActivity"
+            android:label="@string/title_activity_conductor_desconectado"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ConductorDatoActivity"
+            android:label="@string/title_activity_conductor_dato"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".IniciarViajeActivity"
+            android:label="@string/title_activity_iniciar_viaje"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PedidoDetalleActivity"
+            android:label="@string/title_activity_pedido_detalle"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PedidoActualActivity"
+            android:label="@string/title_activity_pedido_actual"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MisPreferenciasActivity"
+            android:label="@string/title_activity_mis_preferencias"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PedidoCancelacionActivity"
+            android:label="@string/title_activity_pedido_cancelacion"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RadioActivity"
+            android:label="@string/title_activity_radio"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MapaActivity"
+            android:label="@string/title_activity_mapa"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ListarCanalConductorActivity"
+            android:label="@string/title_activity_listar_canal_conductor"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RankingActivity"
+            android:label="@string/title_activity_ranking"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBKVqmjbLdL2BodEBO4Iw7wnXW1aKZ_Pp0" />
+        <!--
+            <activity
+            android:name=".IntroActivity"
+            android:label="@string/title_activity_intro"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        -->
+        <receiver android:name=".GpsTrackerBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".GpsTrackerAlarmReceiver" />
+        <service android:name=".LocationService" />
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
     <!--
  The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but are recommended.
     -->
-
+    <uses-permission android:name="taxiplazasurappv6.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -23,113 +140,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.STORAGE" />
+
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-    <uses-feature
-        android:glEsVersion="0x00020000"
-        android:required="true" />
-
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
-        <!-- <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" /> -->
-        <activity
-            android:name="policar.policarappv6.IntroActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <receiver android:name="policar.policarappv6.GpsTrackerBootReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name="policar.policarappv6.GpsTrackerAlarmReceiver" />
-
-        <service android:name="policar.policarappv6.LocationService" />
-
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-        <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyBKVqmjbLdL2BodEBO4Iw7wnXW1aKZ_Pp0" />
-
-        <activity
-            android:name="policar.policarappv6.MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="policar.policarappv6.NavegacionActivity"
-            android:label="@string/title_activity_navegacion"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="policar.policarappv6.CrearCuentaActivity"
-            android:label="@string/title_activity_crear_cuenta"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="policar.policarappv6.HistorialActivity"
-            android:label="@string/title_activity_historial"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="policar.policarappv6.ConductorDesconectadoActivity"
-            android:label="@string/title_activity_conductor_desconectado"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="policar.policarappv6.ConductorDatoActivity"
-            android:label="@string/title_activity_conductor_dato"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="policar.policarappv6.IniciarViajeActivity"
-            android:label="@string/title_activity_iniciar_viaje"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="policar.policarappv6.PedidoDetalleActivity"
-            android:label="@string/title_activity_pedido_detalle"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="policar.policarappv6.PedidoActualActivity"
-            android:label="@string/title_activity_pedido_actual"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="policar.policarappv6.MisPreferenciasActivity"
-            android:label="@string/title_activity_mis_preferencias"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="policar.policarappv6.PedidoCancelacionActivity"
-            android:label="@string/title_activity_pedido_cancelacion"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <!--
-            <activity
-            android:name=".IntroActivity"
-            android:label="@string/title_activity_intro"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        -->
-        <activity
-            android:name="policar.policarappv6.RadioActivity"
-            android:label="@string/title_activity_radio"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="policar.policarappv6.MapaActivity"
-            android:label="@string/title_activity_mapa"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="policar.policarappv6.ListarCanalConductorActivity"
-            android:label="@string/title_activity_listar_canal_conductor"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="policar.policarappv6.RankingActivity"
-            android:label="@string/title_activity_ranking"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-    </application>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
 </manifest>

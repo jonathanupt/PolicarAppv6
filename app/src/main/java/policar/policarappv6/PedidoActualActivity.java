@@ -4,6 +4,7 @@ import android.app.KeyguardManager;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.SystemClock;
+import android.support.design.widget.FloatingActionButton;
 import android.view.Menu;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -39,6 +40,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.view.ViewGroup;
 import android.widget.Chronometer;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -83,7 +85,10 @@ import java.util.TimerTask;
 import javax.net.ssl.HttpsURLConnection;
 
 public class PedidoActualActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements
+
+        View.OnClickListener,
+        NavigationView.OnNavigationItemSelectedListener {
 
     /**
      * IDENTIFICADOR EQUIPO
@@ -292,8 +297,12 @@ public class PedidoActualActivity extends AppCompatActivity
     private String SectorId = "";
     private String SectorNombre = "";
 
+    int MapaAltura = 0;
 
-
+    /**
+     * BOTONES FLOTANTES
+     */
+    private FloatingActionButton fabAumentar, fabReducir, fabUbicar;
 
     //ONSTART -> ON CREATE -> ONRESTART
     @Override
@@ -457,7 +466,7 @@ public class PedidoActualActivity extends AppCompatActivity
         displayUserSettings();
 
         //CAMARA
-        MapaCamara = 2;
+        MapaCamara = 3;
 
         //MOSTRANDO VARIABLES
         txtClienteNombre = (TextView) findViewById(R.id.CmpClienteNombre);
@@ -492,6 +501,18 @@ public class PedidoActualActivity extends AppCompatActivity
 
         capPedidoActualAccion = (LinearLayout) findViewById(R.id.CapPedidoActualAccion);
 
+
+        fabAumentar = (FloatingActionButton) findViewById(R.id.FabPedidoActualAumentar);
+        fabReducir = (FloatingActionButton) findViewById(R.id.FabPedidoActualReducir);
+        fabUbicar = (FloatingActionButton) findViewById(R.id.FabPedidoActualUbicar);
+
+        //EVENTOS - 8
+        fabAumentar.setOnClickListener(this);
+        fabReducir.setOnClickListener(this);
+        fabUbicar.setOnClickListener(this);
+
+
+
         //MOSTRANDO CAPAS
         if (PedidoReferencia.equals("") || PedidoReferencia == null) {
             capPedidoReferencia.setVisibility(View.GONE);
@@ -511,18 +532,20 @@ public class PedidoActualActivity extends AppCompatActivity
             capPedidoLugarCompra.setVisibility(View.VISIBLE);
         }
 
-        if (PedidoTiempo.equals("") || PedidoTiempo.equals("-") || PedidoTiempo == null || PedidoTiempo.equals("null") || PedidoTiempo.equals("0.00") || PedidoTiempo.equals("0")) {
+
+     /*   if (PedidoTiempo.equals("") || PedidoTiempo.equals("-") || PedidoTiempo == null || PedidoTiempo.equals("null") || PedidoTiempo.equals("0.00") || PedidoTiempo.equals("0")) {
             capPedidoTiempo.setVisibility(View.GONE);
         } else {
             capPedidoTiempo.setVisibility(View.VISIBLE);
         }
-
+        */
+/*
         if (PedidoDistancia.equals("") || PedidoDistancia.equals("-") || PedidoDistancia == null || PedidoDistancia.equals("null") || PedidoDistancia.equals("0.00") || PedidoDistancia.equals("0")) {
             capPedidoDistancia.setVisibility(View.GONE);
         } else {
             capPedidoDistancia.setVisibility(View.VISIBLE);
         }
-
+*/
         if ( PedidoTipoAccion.equals("Compra") || PedidoTipoAccion.equals("Gas")) {
             capPedidoActualAccion.setVisibility(View.VISIBLE);
         } else {
@@ -586,6 +609,7 @@ public class PedidoActualActivity extends AppCompatActivity
                 txtPedidoDistancia.setText(PedidoDistancia);
                 txtPedidoTiempo.setText(PedidoTiempo);
 
+                /*
                 if (PedidoTiempo.equals("") || PedidoTiempo.equals("-") || PedidoTiempo == null || PedidoTiempo.equals("null") || PedidoTiempo.equals("0.00") || PedidoTiempo.equals("0")) {
                     capPedidoTiempo.setVisibility(View.GONE);
                 } else {
@@ -597,6 +621,7 @@ public class PedidoActualActivity extends AppCompatActivity
                 } else {
                     capPedidoDistancia.setVisibility(View.VISIBLE);
                 }
+                */
 
             }
 
@@ -623,7 +648,8 @@ public class PedidoActualActivity extends AppCompatActivity
                         //long myElapsedMillis = SystemClock.elapsedRealtime() - cronometro2.getBase();
                         long myElapsedMillis = SystemClock.elapsedRealtime() - croTardanza.getBase();
 
-                        Log.e("getBase",String.valueOf(myElapsedMillis));
+                        //Log.e("getBase",String.valueOf(myElapsedMillis));
+
                         SharedPreferences.Editor editor = sharedPreferences2.edit();
                         editor.putLong("myElapsedMillis", myElapsedMillis);
                         editor.apply();
@@ -814,7 +840,16 @@ public class PedidoActualActivity extends AppCompatActivity
                 try {
 
                     final String resActualizarConductorCoordenada;
-                    resActualizarConductorCoordenada = MtdActualizarConductorCoordenada(PedidoId, ConductorId,ConductorNombre,ConductorNumeroDocumento, VehiculoCoordenadaX, VehiculoCoordenadaY,VehiculoUnidad,VehiculoPlaca);
+                    resActualizarConductorCoordenada = MtdActualizarConductorCoordenada(
+                            PedidoId,
+                            ConductorId,
+                            ConductorNombre,
+                            ConductorNumeroDocumento,
+                            VehiculoCoordenadaX, 
+                            VehiculoCoordenadaY,
+                            VehiculoUnidad,
+                            VehiculoPlaca
+                    );
 
                     runOnUiThread(new Runnable() {
                         @Override
@@ -1120,10 +1155,16 @@ public class PedidoActualActivity extends AppCompatActivity
 
             if (null == googleMap) {
 
+                MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map1);
+
+             //  ViewGroup.LayoutParams params = mapFragment.getView().getLayoutParams();
+                // MapaAltura = params.height;
+                //mMapFragment.getView().setLayoutParams(params);
 
                 googleMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map1)).getMap();
                 googleMap.setMyLocationEnabled(true);
-                googleMap.getUiSettings().setZoomControlsEnabled(true);
+                googleMap.getUiSettings().setZoomControlsEnabled(false);
+                googleMap.getUiSettings().setMyLocationButtonEnabled(false);
                 googleMap.setPadding(0, 0, 0, 0);
 
                 googleMap.setOnMyLocationButtonClickListener(
@@ -1155,7 +1196,7 @@ public class PedidoActualActivity extends AppCompatActivity
                                             txtPedidoDistancia.setText(PedidoDistancia);
                                             txtPedidoTiempo.setText(PedidoTiempo);
 
-                                            if (PedidoTiempo.equals("") || PedidoTiempo.equals("-") || PedidoTiempo == null || PedidoTiempo.equals("null") || PedidoTiempo.equals("0.00") || PedidoTiempo.equals("0")) {
+                                           /* if (PedidoTiempo.equals("") || PedidoTiempo.equals("-") || PedidoTiempo == null || PedidoTiempo.equals("null") || PedidoTiempo.equals("0.00") || PedidoTiempo.equals("0")) {
                                                 capPedidoTiempo.setVisibility(View.GONE);
                                             } else {
                                                 capPedidoTiempo.setVisibility(View.VISIBLE);
@@ -1165,7 +1206,7 @@ public class PedidoActualActivity extends AppCompatActivity
                                                 capPedidoDistancia.setVisibility(View.GONE);
                                             } else {
                                                 capPedidoDistancia.setVisibility(View.VISIBLE);
-                                            }
+                                            }*/
 
                                         }
 
@@ -1249,7 +1290,6 @@ public class PedidoActualActivity extends AppCompatActivity
 
                         if (location != null) {
 
-
                             VehiculoCoordenadaX = Double.toString(location.getLatitude());
                             VehiculoCoordenadaY = Double.toString(location.getLongitude());
 
@@ -1261,23 +1301,9 @@ public class PedidoActualActivity extends AppCompatActivity
 
                                 vehiculoMarker = googleMap.addMarker(new MarkerOptions()
                                         .position(new LatLng(Double.parseDouble(VehiculoCoordenadaX), Double.parseDouble(VehiculoCoordenadaY)))
-                                        .title("¡Aquì estoy!")
-                                        .draggable(true)
+                                        .title("¡Aquí estoy!")
+                                        .draggable(false)
                                         .icon(BitmapDescriptorFactory.fromResource(R.mipmap.icon_taxi150)));
-
-
-                                if (MapaCamara == 2) {
-
-                                    LatLng latLng = new LatLng(Double.parseDouble(VehiculoCoordenadaX), Double.parseDouble(VehiculoCoordenadaY));
-                                    CameraPosition cameraPosition = new CameraPosition.Builder()
-                                            .target(latLng)      // Sets the center of the map to Mountain View
-                                            .zoom(12)                   // Sets the zoom
-                                            //.bearing(20)  //era 90              // Sets the orientation of the camera to east
-                                            .tilt(30)                   // Sets the tilt of the camera to 30 degrees
-                                            .build();                   // Creates a CameraPosition from the builder
-                                    googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-
-                                }
 
                                 /*LatLng latLng = new LatLng(Double.parseDouble(VehiculoCoordenadaX),Double.parseDouble(VehiculoCoordenadaY));
                                 CameraPosition cameraPosition = new CameraPosition.Builder()
@@ -1288,6 +1314,36 @@ public class PedidoActualActivity extends AppCompatActivity
                                         .build();                   // Creates a CameraPosition from the builder
                                 googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));*/
 
+                            }
+
+                            if (MapaCamara == 1) {
+
+
+
+                            }else if (MapaCamara == 2) {
+
+                                LatLng latLng = new LatLng(Double.parseDouble(PedidoCoordenadaX), Double.parseDouble(PedidoCoordenadaY));
+
+                                CameraPosition cameraPosition = new CameraPosition.Builder()
+                                        .target(latLng)      // Sets the center of the map to Mountain View
+                                        .zoom(18)                   // Sets the zoom
+                                        //.bearing(20)  //era 90              // Sets the orientation of the camera to east
+                                        .tilt(30)                   // Sets the tilt of the camera to 30 degrees
+                                        .build();                   // Creates a CameraPosition from the builder
+                                googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
+
+                            }else{
+
+                                LatLng latLng = new LatLng(Double.parseDouble(VehiculoCoordenadaX), Double.parseDouble(VehiculoCoordenadaY));
+
+                                CameraPosition cameraPosition = new CameraPosition.Builder()
+                                        .target(latLng)      // Sets the center of the map to Mountain View
+                                        .zoom(18)                   // Sets the zoom
+                                        //.bearing(20)  //era 90              // Sets the orientation of the camera to east
+                                        .tilt(30)                   // Sets the tilt of the camera to 30 degrees
+                                        .build();                   // Creates a CameraPosition from the builder
+                                googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
                             }
 
@@ -1307,6 +1363,7 @@ public class PedidoActualActivity extends AppCompatActivity
                                     txtPedidoDistancia.setText(PedidoDistancia);
                                     txtPedidoTiempo.setText(PedidoTiempo);
 
+                                    /*
                                     if (PedidoTiempo.equals("") || PedidoTiempo.equals("-") || PedidoTiempo == null || PedidoTiempo.equals("null") || PedidoTiempo.equals("0.00") || PedidoTiempo.equals("0")) {
                                         capPedidoTiempo.setVisibility(View.GONE);
                                     } else {
@@ -1318,7 +1375,7 @@ public class PedidoActualActivity extends AppCompatActivity
                                     } else {
                                         capPedidoDistancia.setVisibility(View.VISIBLE);
                                     }
-
+*/
                                 }
 
                             }
@@ -1371,15 +1428,19 @@ public class PedidoActualActivity extends AppCompatActivity
                             .icon(BitmapDescriptorFactory.fromResource(R.mipmap.icon_pedido150)));
                 }
 
+                Log.e("MapaCamara",String.valueOf(MapaCamara));
 
                 if (MapaCamara == 1) {
+
+
+                    Log.e("MapaCamara","111");
 
                     if (!PedidoCoordenadaX.equals("") && !PedidoCoordenadaY.equals("") && PedidoCoordenadaX != null && PedidoCoordenadaY != null) {
 
                         LatLng latLng = new LatLng(Double.parseDouble(PedidoCoordenadaX), Double.parseDouble(PedidoCoordenadaY));
                         CameraPosition cameraPosition = new CameraPosition.Builder()
                                 .target(latLng)      // Sets the center of the map to Mountain View
-                                .zoom(16)                   // Sets the zoom
+                                .zoom(18)                   // Sets the zoom
                                 //.bearing(20)  //era 90              // Sets the orientation of the camera to east
                                 .tilt(30)                   // Sets the tilt of the camera to 30 degrees
                                 .build();                   // Creates a CameraPosition from the builder
@@ -1390,12 +1451,14 @@ public class PedidoActualActivity extends AppCompatActivity
 
                 } else if (MapaCamara == 2) {
 
+                    Log.e("MapaCamara","222");
+
                     if (!VehiculoCoordenadaX.equals("") && !VehiculoCoordenadaY.equals("") && VehiculoCoordenadaX != null && VehiculoCoordenadaY != null) {
 
                         LatLng latLng = new LatLng(Double.parseDouble(VehiculoCoordenadaX), Double.parseDouble(VehiculoCoordenadaY));
                         CameraPosition cameraPosition = new CameraPosition.Builder()
                                 .target(latLng)      // Sets the center of the map to Mountain View
-                                .zoom(16)                   // Sets the zoom
+                                .zoom(18)                   // Sets the zoom
                                 //.bearing(20)  //era 90              // Sets the orientation of the camera to east
                                 .tilt(30)                   // Sets the tilt of the camera to 30 degrees
                                 .build();                   // Creates a CameraPosition from the builder
@@ -1404,6 +1467,8 @@ public class PedidoActualActivity extends AppCompatActivity
                     }
 
                 } else {
+
+                    Log.e("MapaCamara","333");
 
                     if (!PedidoCoordenadaX.equals("") && !PedidoCoordenadaY.equals("") && PedidoCoordenadaX != null && PedidoCoordenadaY != null) {
 
@@ -1447,6 +1512,7 @@ public class PedidoActualActivity extends AppCompatActivity
                         txtPedidoDistancia.setText(PedidoDistancia);
                         txtPedidoTiempo.setText(PedidoTiempo);
 
+                        /*
                         if (PedidoTiempo.equals("") || PedidoTiempo.equals("-") || PedidoTiempo == null || PedidoTiempo.equals("null") || PedidoTiempo.equals("0.00") || PedidoTiempo.equals("0")) {
                             capPedidoTiempo.setVisibility(View.GONE);
                         } else {
@@ -1458,6 +1524,7 @@ public class PedidoActualActivity extends AppCompatActivity
                         } else {
                             capPedidoDistancia.setVisibility(View.VISIBLE);
                         }
+                        */
 
                     }
 
@@ -1578,77 +1645,45 @@ public class PedidoActualActivity extends AppCompatActivity
 
                 case 2:
 
-                    int result2 = ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION);
+                    int result2 = ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION);
 
                     if (result2 == PackageManager.PERMISSION_GRANTED) {
                         Log.e("PedidoActual10", "2AAA");
                         respuesta = true;
                     } else {
                         respuesta = false;
-                        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, permiso);
+                        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, permiso);
                         Log.e("PedidoActual10", "2BBB");
                     }
 
                     break;
 
-                case 3:
+                case 7:
 
-                    int result3 = ContextCompat.checkSelfPermission(context, Manifest.permission.RECORD_AUDIO);
+                    int result7 = ContextCompat.checkSelfPermission(context, android.Manifest.permission.CALL_PHONE);
 
-                    if (result3 == PackageManager.PERMISSION_GRANTED) {
-                        Log.e("PedidoActual10", "3AAA");
+                    if (result7 == PackageManager.PERMISSION_GRANTED) {
+                        Log.e("EsperandoTaxiLlegada10","3AAA");
                         respuesta = true;
-                    } else {
+                    }else {
                         respuesta = false;
-                        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.RECORD_AUDIO}, permiso);
-                        Log.e("PedidoActual10", "3BBB");
+                        ActivityCompat.requestPermissions(activity, new String[]{android.Manifest.permission.CALL_PHONE}, permiso);
+                        Log.e("EsperandoTaxiLlegada10", "3BBB");
                     }
-
                     break;
 
-                case 4:
+                case 8:
 
-                    int result4 = ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                    int result8 = ContextCompat.checkSelfPermission(context, android.Manifest.permission.CALL_PHONE);
 
-                    if (result4 == PackageManager.PERMISSION_GRANTED) {
-                        Log.e("PedidoActual10", "4AAA");
+                    if (result8 == PackageManager.PERMISSION_GRANTED) {
+                        Log.e("EsperandoTaxiLlegada10","3AAA");
                         respuesta = true;
-                    } else {
+                    }else {
                         respuesta = false;
-                        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, permiso);
-                        Log.e("PedidoActual10", "4BBB");
+                        ActivityCompat.requestPermissions(activity, new String[]{android.Manifest.permission.CALL_PHONE}, permiso);
+                        Log.e("EsperandoTaxiLlegada10", "3BBB");
                     }
-
-                    break;
-
-                case 5:
-
-                    int result5 = ContextCompat.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE);
-
-                    if (result5 == PackageManager.PERMISSION_GRANTED) {
-                        Log.e("PedidoActual10", "5AAA");
-                        respuesta = true;
-                    } else {
-                        respuesta = false;
-                        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, permiso);
-                        Log.e("PedidoActual10", "5BBB");
-                    }
-
-                    break;
-
-                case 6:
-
-                    int result6 = ContextCompat.checkSelfPermission(context, Manifest.permission.VIBRATE);
-
-                    if (result6 == PackageManager.PERMISSION_GRANTED) {
-                        Log.e("PedidoActual10", "5AAA");
-                        respuesta = true;
-                    } else {
-                        respuesta = false;
-                        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.VIBRATE}, permiso);
-                        Log.e("PedidoActual10", "5BBB");
-                    }
-
                     break;
             }
 
@@ -1676,6 +1711,20 @@ public class PedidoActualActivity extends AppCompatActivity
                     MtdObtenerCoordenadas();
                     break;
 
+                case 7:
+
+                    FncLlamar();
+
+                    break;
+
+
+                case 8:
+
+                    FncLlamarTelefono();
+
+                    break;
+
+
             }
 
         } else {
@@ -1683,6 +1732,70 @@ public class PedidoActualActivity extends AppCompatActivity
             FncMostrarToast("Permiso denegado, es posible que la aplicacion no funcione  correctamente.");
         }
 
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id){
+
+
+
+            case R.id.FabPedidoActualUbicar:
+
+                //if(!CambioUbicacion) {
+
+                //OBTENER COORDENADAS
+                /*if(checkPermission(2)){
+                    MtdObtenerCoordenadas();
+                }
+*/
+
+
+                if(!VehiculoCoordenadaX.equals("") & !VehiculoCoordenadaY.equals("") & !VehiculoCoordenadaX.equals("0.00") & !VehiculoCoordenadaY.equals("0.00") & VehiculoCoordenadaX!=null & VehiculoCoordenadaY!=null){
+
+                    if(googleMap!=null){
+
+                        LatLng latLng = new LatLng(Double.parseDouble(VehiculoCoordenadaX), Double.parseDouble(VehiculoCoordenadaY));
+                        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 18);
+                        googleMap.animateCamera(cameraUpdate);
+
+                        MapaCamara = 3;
+
+                    }else{
+                        Log.e("CambioUbicacion", "Google Map Error");
+                    }
+
+                }else{
+                    FncMostrarToast("No se pudo obtener su ubicación");
+                }
+
+                break;
+
+            case R.id.FabPedidoActualReducir:
+
+                if(null != googleMap){
+                    googleMap.animateCamera(CameraUpdateFactory.zoomOut());
+                }
+
+                break;
+
+            case R.id.FabPedidoActualAumentar:
+
+
+                if(null != googleMap){
+                    googleMap.animateCamera(CameraUpdateFactory.zoomIn());
+                }
+                break;
+
+
+
+
+
+
+
+        }
     }
 
 
@@ -2124,6 +2237,7 @@ public class PedidoActualActivity extends AppCompatActivity
     public void onClick_BtnPedidoActualUbicar(View v){
 
         if(MapaCamara == 1){
+
             MapaCamara = 2;
 
             if(!PedidoCoordenadaX.equals("") && !PedidoCoordenadaY.equals("")  && PedidoCoordenadaX !=null && PedidoCoordenadaY != null){
@@ -2135,13 +2249,13 @@ public class PedidoActualActivity extends AppCompatActivity
                 pedidoMarker = googleMap.addMarker(new MarkerOptions()
                         .position(new LatLng(Double.parseDouble(PedidoCoordenadaX), Double.parseDouble(PedidoCoordenadaY)))
                         .title(ClienteNombre)
-                        .draggable(true)
+                        .draggable(false)
                         .icon(BitmapDescriptorFactory.fromResource(R.mipmap.icon_pedido150)));*/
 
                     LatLng latLng = new LatLng(Double.parseDouble(PedidoCoordenadaX),Double.parseDouble(PedidoCoordenadaY));
                     CameraPosition cameraPosition = new CameraPosition.Builder()
                             .target(latLng)      // Sets the center of the map to Mountain View
-                            .zoom(16)                   // Sets the zoom
+                            .zoom(18)                   // Sets the zoom
                             //.bearing(90)                // Sets the orientation of the camera to east
                             .tilt(30)                   // Sets the tilt of the camera to 30 degrees
                             .build();                   // Creates a CameraPosition from the builder
@@ -2151,6 +2265,7 @@ public class PedidoActualActivity extends AppCompatActivity
 
 
         }else if(MapaCamara==2){
+
             MapaCamara = 3;
 
             if(!VehiculoCoordenadaX.equals("") && !VehiculoCoordenadaY.equals("") &&  VehiculoCoordenadaX !=null && VehiculoCoordenadaY != null) {
@@ -2158,13 +2273,14 @@ public class PedidoActualActivity extends AppCompatActivity
                 LatLng latLng = new LatLng(Double.parseDouble(VehiculoCoordenadaX),Double.parseDouble(VehiculoCoordenadaY));
                 CameraPosition cameraPosition = new CameraPosition.Builder()
                         .target(latLng)      // Sets the center of the map to Mountain View
-                        .zoom(16)                   // Sets the zoom
+                        .zoom(18)                   // Sets the zoom
                         //.bearing(90)                // Sets the orientation of the camera to east
                         .tilt(30)                   // Sets the tilt of the camera to 30 degrees
                         .build();                   // Creates a CameraPosition from the builder
                 googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
             }
+
         }else {
 
             MapaCamara = 1;
@@ -2181,10 +2297,14 @@ public class PedidoActualActivity extends AppCompatActivity
                     // begin new code:
                     int width = getResources().getDisplayMetrics().widthPixels;
                     int height = getResources().getDisplayMetrics().heightPixels;
+
+                    //   height = MapaAltura;
                     //int padding = (int) (width * 0.1); // offset from edges of the map 12% of screen
+                       int padding = (int) (height * 0.1); // offset from edges of the map 12% of screen
 
                     //CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, width, height, padding);
-                       CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, width, height, 100);                   googleMap.animateCamera(cu);
+                       CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, width, height, padding);
+                       googleMap.animateCamera(cu);
 
 
                     /*   LatLng latLng = new LatLng(Double.parseDouble(CamaraCoordenadaX),Double.parseDouble(CamaraCoordenadaY));
@@ -2215,7 +2335,7 @@ public class PedidoActualActivity extends AppCompatActivity
             pedidoMarker = googleMap.addMarker(new MarkerOptions()
                     .position(new LatLng(Double.parseDouble(PedidoCoordenadaX), Double.parseDouble(PedidoCoordenadaY)))
                     .title(ClienteNombre)
-                    .draggable(true)
+                    .draggable(false)
                     .icon(BitmapDescriptorFactory.fromResource(R.mipmap.icon_pedido150)));
 
 
@@ -3039,35 +3159,57 @@ FncMostrarToast("¡Alerta Enviada!");
 
     }
 
+
+
+
+    public void FncLlamar(){
+
+        try {
+
+            FncMostrarToast("Iniciando Llamada");
+
+            Intent callIntent = new Intent(Intent.ACTION_CALL);
+            callIntent.setData(Uri.parse("tel:" + ClienteCelular));
+            startActivity(callIntent);
+        } catch (Exception e) {
+            FncMostrarToast("Ha ocurrido un error interno");
+            //Log.e("helloandroid dialing example", "Call failed", e);
+        }
+
+
+    }
+
+    public void FncLlamarTelefono(){
+
+        try {
+
+            FncMostrarToast("Iniciando Llamada");
+
+            Intent callIntent = new Intent(Intent.ACTION_CALL);
+            callIntent.setData(Uri.parse("tel:" + ClienteTelefono));
+            startActivity(callIntent);
+        } catch (Exception e) {
+            FncMostrarToast("Ha ocurrido un error interno");
+            //Log.e("helloandroid dialing example", "Call failed", e);
+        }
+
+
+    }
+
+
     public void onClick_BtnPedidoActualLlamar(View v){
 
         if(!ClienteCelular.equals("")) {
 
-            try {
-
-                FncMostrarToast("Iniciando Llamada");
-
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:" + ClienteCelular));
-                startActivity(callIntent);
-            } catch (Exception e) {
-                FncMostrarToast("Ha ocurrido un error interno");
-                //Log.e("helloandroid dialing example", "Call failed", e);
+            if(checkPermission(7)){
+                FncLlamar();
             }
 
             //FncLlamarNumero(ConductorCelular);
         }else if(!ClienteTelefono.equals("")){
 
-            try {
-
-                FncMostrarToast("Iniciando Llamada");
-
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:" + ClienteTelefono));
-                startActivity(callIntent);
-            } catch (Exception e) {
-                FncMostrarToast("Ha ocurrido un error interno");
-                //Log.e("helloandroid dialing example", "Call failed", e);
+            if(checkPermission(8)){
+                FncLlamarTelefono();
             }
 
         }else{
@@ -4004,7 +4146,8 @@ ENVIO DE VARIABLES
         String sensor = "sensor=false";
 
         // Building the parameters to the web service
-        String parameters = str_origin+"&"+str_dest+"&"+sensor;
+
+        String parameters = str_origin+"&"+str_dest+"&"+sensor+ "&key=" + getString(R.string.app_google_apikey);
 
         // Output format
         String output = "json";
@@ -4012,8 +4155,11 @@ ENVIO DE VARIABLES
         // Building the url to the web service
         String url = "https://maps.googleapis.com/maps/api/directions/"+output+"?"+parameters;
 
+        Log.e("ErrorRuta5:",url);
+
         return url;
     }
+
     /** A method to download json data from url */
     private String downloadUrl(String strUrl) throws IOException {
         String data = "";
@@ -4135,7 +4281,7 @@ ENVIO DE VARIABLES
 
                 // Adding all the points in the route to LineOptions
                 lineOptions.addAll(points);
-                lineOptions.width(10);
+                lineOptions.width(5);
                 lineOptions.color(Color.RED);
             }
 

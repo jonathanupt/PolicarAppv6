@@ -3,6 +3,7 @@ package policar.policarappv6;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -71,7 +72,10 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class PedidoDetalleActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements
+
+        View.OnClickListener,
+        NavigationView.OnNavigationItemSelectedListener {
 
     /**
      * IDENTIFICADOR EQUIPO
@@ -227,6 +231,8 @@ PERMISOS
  */
     MediaPlayer mediaPlayerPedido;
     MediaPlayer mediaPlayerError;
+
+    private FloatingActionButton fabAumentar, fabReducir, fabUbicar;
 
     //ONSTART -> ON CREATE -> ONRESTART
     @Override
@@ -413,6 +419,15 @@ PERMISOS
 
         capPedidoTiempo = (LinearLayout) findViewById(R.id.CapPedidoTiempo);
         capPedidoDistancia = (LinearLayout) findViewById(R.id.CapPedidoDistancia);
+
+        fabAumentar = (FloatingActionButton) findViewById(R.id.FabPedidoDetalleAumentar);
+        fabReducir = (FloatingActionButton) findViewById(R.id.FabPedidoDetalleReducir);
+        //fabUbicar = (FloatingActionButton) findViewById(R.id.FabPedidoDetalleUbicar);
+
+        //EVENTOS - 8
+        fabAumentar.setOnClickListener(this);
+        fabReducir.setOnClickListener(this);
+        //fabUbicar.setOnClickListener(this);
 
         //MOSTRANDO CAPAS
         if(PedidoTipoUnidad.equals("Station")){
@@ -992,14 +1007,14 @@ PERMISOS
 
             case 2:
 
-                int result2 = ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION);
+                int result2 = ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION);
 
                 if (result2 == PackageManager.PERMISSION_GRANTED) {
                     Log.e("MsgPedidoDetalle10","AAA");
                     respuesta = true;
                 }else {
                     respuesta = false;
-                    ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, permiso);
+                    ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, permiso);
                     Log.e("MsgPedidoDetalle10", "BBB");
                 }
 
@@ -1034,6 +1049,69 @@ PERMISOS
 
     }
 
+
+
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id){
+
+
+/*
+            case R.id.FabPedidoDetalleUbicar:
+
+                //if(!CambioUbicacion) {
+
+                //OBTENER COORDENADAS
+                if(checkPermission(2)){
+                    MtdObtenerCoordenadas();
+                }
+
+                //}
+
+                if(!ClienteCoordenadaX.equals("") & !ClienteCoordenadaY.equals("") & !ClienteCoordenadaX.equals("0.00") & !ClienteCoordenadaY.equals("0.00") & ClienteCoordenadaX!=null & ClienteCoordenadaY!=null){
+
+                    if(googleMap!=null){
+
+                        LatLng latLng = new LatLng(Double.parseDouble(ClienteCoordenadaX), Double.parseDouble(ClienteCoordenadaY));
+                        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 18);
+                        googleMap.animateCamera(cameraUpdate);
+
+                    }else{
+                        Log.e("CambioUbicacion", "Google Map Error");
+                    }
+
+                }else{
+                    FncMostrarToast("No se pudo obtener su ubicación");
+                }
+
+                break;*/
+
+            case R.id.FabPedidoDetalleReducir:
+
+                if(null != googleMap){
+                    googleMap.animateCamera(CameraUpdateFactory.zoomOut());
+                }
+
+                break;
+
+            case R.id.FabPedidoDetalleAumentar:
+
+
+                if(null != googleMap){
+                    googleMap.animateCamera(CameraUpdateFactory.zoomIn());
+                }
+                break;
+
+
+
+
+
+
+
+        }
+    }
 
 
 
@@ -1319,8 +1397,12 @@ PERMISOS
 
                 googleMap  = ((MapFragment) getFragmentManager().findFragmentById(R.id.map1)).getMap();
                 googleMap.setMyLocationEnabled(false);
-                googleMap.getUiSettings().setZoomControlsEnabled(true);
-                googleMap.setPadding(0, 0, 0, 0);
+                googleMap.getUiSettings().setZoomControlsEnabled(false);
+                googleMap.setPadding(0, 0, 0, 90);
+
+
+
+
                 googleMap.setOnMyLocationChangeListener(new GoogleMap.OnMyLocationChangeListener() {
                     @Override
                     public void onMyLocationChange(Location location) {
@@ -1343,7 +1425,7 @@ PERMISOS
                             LatLng latLng = new LatLng(Double.parseDouble(VehiculoCoordenadaX),Double.parseDouble(VehiculoCoordenadaY));
                             CameraPosition cameraPosition = new CameraPosition.Builder()
                                     .target(latLng)      // Sets the center of the map to Mountain View
-                                    .zoom(19)                   // Sets the zoom
+                                    .zoom(18)                   // Sets the zoom
                                     //.bearing(90)  //era 90              // Sets the orientation of the camera to east
                                     .tilt(30)                   // Sets the tilt of the camera to 30 degrees
                                     .build();                   // Creates a CameraPosition from the builder
@@ -1366,17 +1448,18 @@ PERMISOS
                                 txtPedidoDistancia.setText(PedidoDistancia);
                                 txtPedidoTiempo.setText(PedidoTiempo);
 
-                                if(PedidoTiempo.equals("") || PedidoTiempo.equals("-") || PedidoTiempo == null|| PedidoTiempo.equals("null") || PedidoTiempo.equals("0.00") || PedidoTiempo.equals("0")  ){
+                             /*   if(PedidoTiempo.equals("") || PedidoTiempo.equals("-") || PedidoTiempo == null|| PedidoTiempo.equals("null") || PedidoTiempo.equals("0.00") || PedidoTiempo.equals("0")  ){
                                     capPedidoTiempo.setVisibility(View.GONE);
                                 }else{
                                     capPedidoTiempo.setVisibility(View.VISIBLE);
                                 }
+                                */
 
-                                if(PedidoDistancia.equals("") || PedidoDistancia.equals("-") || PedidoDistancia == null|| PedidoDistancia.equals("null") || PedidoDistancia.equals("0.00") || PedidoDistancia.equals("0") ){
+/*                                if(PedidoDistancia.equals("") || PedidoDistancia.equals("-") || PedidoDistancia == null|| PedidoDistancia.equals("null") || PedidoDistancia.equals("0.00") || PedidoDistancia.equals("0") ){
                                     capPedidoDistancia.setVisibility(View.GONE);
                                 }else{
                                     capPedidoDistancia.setVisibility(View.VISIBLE);
-                                }
+                                }*/
 
                             }
 
@@ -1426,7 +1509,7 @@ PERMISOS
 
                         int width = getResources().getDisplayMetrics().widthPixels;
                         int height = getResources().getDisplayMetrics().heightPixels;
-                        int padding = (int) (width * 0.30); // offset from edges of the map 12% of screen
+                        int padding = (int) (width * 0.1); // offset from edges of the map 12% of screen
 
                         CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, width, height, padding);
 
@@ -2557,13 +2640,17 @@ PERMISOS
         String sensor = "sensor=false";
 
         // Building the parameters to the web service
-        String parameters = str_origin+"&"+str_dest+"&"+sensor;
+//        String parameters = str_origin+"&"+str_dest+"&"+sensor;
+        String parameters = str_origin+"&"+str_dest+"&"+sensor+ "&key=" + getString(R.string.app_google_apikey);
+
 
         // Output format
         String output = "json";
 
         // Building the url to the web service
         String url = "https://maps.googleapis.com/maps/api/directions/"+output+"?"+parameters;
+
+        Log.e("ErrorRuta5:",url);
 
         return url;
     }

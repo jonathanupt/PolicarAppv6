@@ -17,6 +17,7 @@ import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
@@ -34,6 +35,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -70,7 +72,11 @@ import java.util.TimerTask;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class MapaActivity extends AppCompatActivity {
+public class MapaActivity extends AppCompatActivity
+
+        implements
+        View.OnClickListener
+{
 
     /**
      * IDENTIFICADOR EQUIPO
@@ -180,7 +186,12 @@ public class MapaActivity extends AppCompatActivity {
 
     TextView txtConductorActivosTotal;
 
-
+    /**
+     * BOTONES FLOTANTES
+     */
+    private FloatingActionButton fabAumentar, fabReducir, fabUbicar;
+    
+    
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -264,6 +275,17 @@ public class MapaActivity extends AppCompatActivity {
 
         txtConductorActivosTotal = (TextView) findViewById(R.id.CmpConductorActivosTotal);
 
+        
+        fabAumentar = (FloatingActionButton) findViewById(R.id.FabMapaAumentar);
+        fabReducir = (FloatingActionButton) findViewById(R.id.FabMapaReducir);
+        fabUbicar = (FloatingActionButton) findViewById(R.id.FabMapaUbicar);
+
+        //EVENTOS - 8
+        fabAumentar.setOnClickListener(this);
+        fabReducir.setOnClickListener(this);
+        fabUbicar.setOnClickListener(this);
+        
+        
         if(ConductorAlerta.equals("1")){
             //TipoCamara = 2;
 
@@ -699,7 +721,8 @@ public class MapaActivity extends AppCompatActivity {
 
                 googleMap  = ((MapFragment) getFragmentManager().findFragmentById(R.id.map1)).getMap();
                 googleMap.setMyLocationEnabled(true);
-                googleMap.getUiSettings().setZoomControlsEnabled(true);
+                googleMap.getUiSettings().setZoomControlsEnabled(false);
+                googleMap.getUiSettings().setMyLocationButtonEnabled(false);
                 googleMap.setPadding(0, 0, 0, 0);
 
                 googleMap.setOnMyLocationButtonClickListener(
@@ -909,14 +932,14 @@ public class MapaActivity extends AppCompatActivity {
 
                 case 2:
 
-                    int result2 = ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION);
+                    int result2 = ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION);
 
                     if (result2 == PackageManager.PERMISSION_GRANTED) {
                         Log.e("Mapa10","2AAA");
                         respuesta = true;
                     }else {
                         respuesta = false;
-                        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, permiso);
+                        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, permiso);
                         Log.e("Mapa10", "2BBB");
                     }
 
@@ -1019,6 +1042,63 @@ public class MapaActivity extends AppCompatActivity {
 
     }
 
+
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id){
+
+
+
+            case R.id.FabMapaUbicar:
+
+                //if(!CambioUbicacion) {
+
+                //OBTENER COORDENADAS
+                /*if(checkPermission(2)){
+                    MtdObtenerCoordenadas();
+                }
+*/
+
+
+                if(!VehiculoCoordenadaX.equals("") & !VehiculoCoordenadaY.equals("") & !VehiculoCoordenadaX.equals("0.00") & !VehiculoCoordenadaY.equals("0.00") & VehiculoCoordenadaX!=null & VehiculoCoordenadaY!=null){
+
+                    if(googleMap!=null){
+
+                        LatLng latLng = new LatLng(Double.parseDouble(VehiculoCoordenadaX), Double.parseDouble(VehiculoCoordenadaY));
+                        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 18);
+                        googleMap.animateCamera(cameraUpdate);
+
+                    }else{
+                        Log.e("CambioUbicacion", "Google Map Error");
+                    }
+
+                }else{
+                    FncMostrarToast("No se pudo obtener su ubicación");
+                }
+
+                break;
+
+            case R.id.FabMapaReducir:
+
+                if(null != googleMap){
+                    googleMap.animateCamera(CameraUpdateFactory.zoomOut());
+                }
+
+                break;
+
+            case R.id.FabMapaAumentar:
+
+
+                if(null != googleMap){
+                    googleMap.animateCamera(CameraUpdateFactory.zoomIn());
+                }
+                break;
+
+
+        }
+    }
 
 
     public void MtdObtenerCoordenadas() {

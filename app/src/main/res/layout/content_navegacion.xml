@@ -37,12 +37,11 @@
             <TextView
                 android:id="@+id/CmpNavegacionSector"
                 style="@style/est_navegacion_sector"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/CmpMensaje"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_weight="0.5"
                 android:gravity="center"
                 android:text="Sector 0" />
 
